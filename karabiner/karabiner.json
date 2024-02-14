@@ -11,14 +11,14 @@
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
+                    "basic.to_delayed_action_delay_milliseconds": 1000,
                     "basic.to_if_alone_timeout_milliseconds": 1000,
                     "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
                     {
-                        "description": "Enter to Hyper(Ctrl+Alt+Gui+Shift), Enter if alone",
+                        "description": "Enter set `do_modify_action` to `1` when pressed, Enter if alone",
                         "manipulators": [
                             {
                                 "from": {
@@ -26,14 +26,18 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_shift",
-                                        "lazy": true,
-                                        "modifiers": [
-                                            "left_control",
-                                            "left_alt",
-                                            "left_gui"
-                                        ],
-                                        "repeat": true
+                                        "set_variable": {
+                                            "name": "do_modify_action",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "do_modify_action",
+                                            "value": 0
+                                        }
                                     }
                                 ],
                                 "to_if_alone": [
@@ -47,7 +51,7 @@
                         ]
                     },
                     {
-                        "description": "CapsLock set `caps_lock pressed` to `1` on hold, Esc if press alone",
+                        "description": "CapsLock set `do_modify_action` to `1` when pressed, Esc if press alone",
                         "manipulators": [
                             {
                                 "from": {
@@ -61,7 +65,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "caps_lock pressed",
+                                            "name": "do_modify_action",
                                             "value": 1
                                         }
                                     }
@@ -69,7 +73,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "caps_lock pressed",
+                                            "name": "do_modify_action",
                                             "value": 0
                                         }
                                     }
@@ -84,12 +88,12 @@
                         ]
                     },
                     {
-                        "description": "H,J,K,L to arrow keys (when `caps_lock pressed` is `1`)",
+                        "description": "H,J,K,L to arrow keys (when `do_modify_action` is `1`)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -112,7 +116,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -135,7 +139,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -158,7 +162,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -181,12 +185,12 @@
                         ]
                     },
                     {
-                        "description": "B to Backspace, D to Delete, A to Home, E to End, U to PageUp, Y to PageDown (when `caps_lock pressed` is 1)",
+                        "description": "B to Backspace, D to Delete, A to Home, E to End, U to PageUp, Y to PageDown (when `do_modify_action` is 1)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -209,7 +213,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -232,7 +236,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -255,7 +259,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -278,7 +282,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -301,7 +305,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -324,12 +328,12 @@
                         ]
                     },
                     {
-                        "description": "[1234567890-=] to [F1-F12] (when `caps_lock pressed` is 1)",
+                        "description": "[1234567890-=] to [F1-F12] (when `do_modify_action` is 1)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -352,7 +356,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -375,7 +379,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -398,7 +402,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -421,7 +425,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -444,7 +448,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -467,7 +471,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -490,7 +494,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -513,7 +517,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -536,7 +540,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -559,7 +563,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -582,7 +586,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -605,12 +609,12 @@
                         ]
                     },
                     {
-                        "description": "T to Ctrl+Alt+T (manualy map to iTerm2 shortcut) (when `caps_lock pressed` is 1)",
+                        "description": "T to Ctrl+Alt+T (manualy map to iTerm2 shortcut) (when `do_modify_action` is 1)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -637,7 +641,7 @@
                         ]
                     },
                     {
-                        "description": "W[H,J,K,L,N,P,M] to unused key (manualy map to window management) (when `caps_lock pressed` is 1)",
+                        "description": "W[H,J,K,L,N,P,M,R,A,C,F] to unused key (manualy map to window management) (when `do_modify_action` is 1)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -673,7 +677,7 @@
                                         "key_code": "f13",
                                         "modifiers": [
                                             "left_shift"
-                                        ] 
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -719,7 +723,8 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },        {
+                            },
+                            {
                                 "conditions": [
                                     {
                                         "name": "window_management",
@@ -739,7 +744,8 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },      {
+                            },
+                            {
                                 "conditions": [
                                     {
                                         "name": "window_management",
@@ -760,7 +766,8 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },      {
+                            },
+                            {
                                 "conditions": [
                                     {
                                         "name": "window_management",
@@ -785,7 +792,95 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "window_management",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13",
+                                        "modifiers": [
+                                            "left_shift",
+                                            "left_gui"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_management",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_alt"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_management",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_gui"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_management",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13",
+                                        "modifiers": [
+                                            "left_alt",
+                                            "left_gui"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -796,7 +891,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "caps_lock pressed",
+                                            "name": "do_modify_action",
                                             "value": 0
                                         }
                                     },
@@ -830,7 +925,7 @@
                         ]
                     },
                     {
-                        "description": "O[A-Z] to Hyper+[A-Z] (manualy map to open app) (when `caps_lock pressed` is 1)",
+                        "description": "O[A-Z] to Hyper+[A-Z] (manualy map to open app) (when `do_modify_action` is 1)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1459,7 +1554,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "do_modify_action",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1470,7 +1565,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "caps_lock pressed",
+                                            "name": "do_modify_action",
                                             "value": 0
                                         }
                                     },
@@ -1494,6 +1589,96 @@
                                         {
                                             "set_variable": {
                                                 "name": "with_hyper_modified",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "I[E,V] to change input source language (when `do_modify_action` is 1)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "do_modify_input_source",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e"
+                                },
+                                "to": [
+                                    {
+                                        "select_input_source": {
+                                            "language": "^en$"
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "do_modify_input_source",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v"
+                                },
+                                "to": [
+                                    {
+                                        "select_input_source": {
+                                            "language": "^vi$"
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "do_modify_action",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "do_modify_action",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "do_modify_input_source",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "do_modify_input_source",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "do_modify_input_source",
                                                 "value": 0
                                             }
                                         }
