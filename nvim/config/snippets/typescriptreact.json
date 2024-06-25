@@ -1,0 +1,25 @@
+{
+  "Export React Arrow Component": {
+    "prefix": "era",
+    "body": [
+      "import React from \"react\"",
+      "",
+      "type Props = {\n\t$1\n}",
+      "const $TM_FILENAME_BASE = ({}: Props) => {",
+      "\treturn $0",
+      "}",
+      "export default $TM_FILENAME_BASE"
+    ],
+    "description": "Export React Arrow Component"
+  },
+  "Export Component": {
+    "prefix": "ec",
+    "body": ["export const $TM_FILENAME_BASE = () => {\nreturn$0\n}"],
+    "description": "Export React Component Without Prop"
+  },
+  "Import Style Scss Module": {
+    "prefix": "ism",
+    "body": ["import styles from \"./$TM_FILENAME_BASE.module.scss\";"],
+    "description": "Import Style Scss Module"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "Arrow Block Function": {
+    "prefix": "arb",
+    "body": ["($1) => {$0}"],
+    "description": "Arrow Block Function"
+  },
+  "Arrow Expression Function": {
+    "prefix": "are",
+    "body": ["($1) => $0"],
+    "description": "Arrow Expression Function"
+  },
+  "React Forward Export Default": {
+    "prefix": "fec",
+    "body": [
+      "export { ${TM_DIRECTORY/^.+\\/(.*)$/$1/} as default } from \"./${TM_DIRECTORY/^.+\\/(.*)$/$1/}\""
+    ],
+    "description": "Export component"
+  }
+}
