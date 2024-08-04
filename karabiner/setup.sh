@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp $PWD/karabiner.json $HOME/.config/karabiner/karabiner.json
+cp ./config/karabiner.json $HOME/.config/karabiner/karabiner.json
