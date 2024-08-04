@@ -6,12 +6,13 @@
 return {
   "AstroNvim/astrocommunity",
 
-  -- layout
+  -- ui
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  { import = "astrocommunity.recipes.vscode-icons" },
 
-  -- colorscheme
-  { import = "astrocommunity.colorscheme.catppuccin" },
+  -- feature
+  { import = "astrocommunity.recipes.auto-session-restore" },
 
   -- motion
   { import = "astrocommunity.motion.hop-nvim" },
@@ -26,6 +27,7 @@ return {
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.treesj" },
 
+  -- pack
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
