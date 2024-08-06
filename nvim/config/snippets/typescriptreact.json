@@ -1,25 +1,19 @@
 {
   "Export React Arrow Component": {
-    "prefix": "era",
+    "prefix": "ec",
     "body": [
       "import React from \"react\"",
+      "import \"twin.macro\"",
       "",
-      "type Props = {\n\t$1\n}",
-      "const $TM_FILENAME_BASE = ({}: Props) => {",
+      "export const $TM_FILENAME_BASE: React.FC = () => {",
       "\treturn $0",
-      "}",
-      "export default $TM_FILENAME_BASE"
+      "}"
     ],
-    "description": "Export React Arrow Component"
+    "description": "React Arrow Component file template"
   },
-  "Export Component": {
-    "prefix": "ec",
-    "body": ["export const $TM_FILENAME_BASE = () => {\nreturn$0\n}"],
-    "description": "Export React Component Without Prop"
-  },
-  "Import Style Scss Module": {
-    "prefix": "ism",
-    "body": ["import styles from \"./$TM_FILENAME_BASE.module.scss\";"],
-    "description": "Import Style Scss Module"
+  "React Arrow Component": {
+    "prefix": "rc",
+    "body": ["const $1: React.FC = () => {", "\treturn $0", "}"],
+    "description": "React Arrow Component"
   }
 }

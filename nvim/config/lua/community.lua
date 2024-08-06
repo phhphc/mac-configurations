@@ -9,7 +9,6 @@ return {
   -- ui
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
-  { import = "astrocommunity.recipes.vscode-icons" },
 
   -- feature
   { import = "astrocommunity.recipes.auto-session-restore" },
