@@ -8,9 +8,14 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
+
+        -- make gr work without delay
         ["grr"] = false,
         ["grn"] = false,
         ["gra"] = false,
+
+        -- add utility
+        ["<Leader>W"] = { "<Cmd>wa<CR>", desc = "Save all" },
       },
       t = {
         ["<F8>"] = { "<C-\\><C-n>" },
