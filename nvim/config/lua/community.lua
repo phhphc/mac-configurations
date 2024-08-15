@@ -10,9 +10,6 @@ return {
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
 
-  -- feature
-  { import = "astrocommunity.recipes.auto-session-restore" },
-
   -- motion
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.motion.marks-nvim" },
