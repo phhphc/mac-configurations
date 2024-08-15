@@ -1,9 +1,18 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 ---@type LazySpec
 return {
   {
-    "knubie/vim-kitty-navigator",
-    lazy = false,
+    -- kitty scrollback buffer
+    "mikesmithgh/kitty-scrollback.nvim",
+    lazy = true,
+    version = "^5.0.0",
+    cmd = { "KittyScrollbackGenerateKittens", "KittyScrollbackCheckHealth" },
+    event = { "User KittyScrollbackLaunch" },
+    opts = {
+      ksb_builtin_get_text_all = {
+        kitty_get_text = {
+          ansi = true,
+        },
+      },
+    },
   },
 }
