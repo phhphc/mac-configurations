@@ -1,3 +1,9 @@
+# Use neovim as default editor
+export EDITOR=nvim
+export VISUAL=nvim
+
+
+
 # home brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$(brew --prefix)/bin":$PATH
@@ -33,3 +39,25 @@ alias lkf="source /Users/phhphc/Projects/kinfra-devenv/sourcing"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
+
+# cargo
+source "$HOME/.cargo/env"
+
+
+
+
+
+
+
+# bun completions
+[ -s "/Users/phhphc/.bun/_bun" ] && source "/Users/phhphc/.bun/_bun"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/phhphc/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/phhphc/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/phhphc/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/phhphc/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+# gpg sign
+export GPG_TTY=$(tty)

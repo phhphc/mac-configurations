@@ -1,2 +1,5 @@
 # history file
-.zhistory
+/.zhistory
+
+# generated file
+/.zcompdump
