@@ -9,8 +9,8 @@ if [[ -f $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme ]]; then
 
   source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
-  # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+  # To customize prompt, run `p10k configure` or edit $ZDOTDIR/.p10k.zsh.
+  [[ ! -f "${ZDOTDIR}/.p10k.zsh" ]] || source "${ZDOTDIR}/.p10k.zsh"
 fi 
 
 
@@ -47,7 +47,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
 # History configurations
-HISTFILE=~/.zsh_history
+HISTFILE="$ZDOTDIR/.zhistory"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_expire_dups_first # Delete duplicates first when HISTFILE size exceeds HISTSIZE
@@ -61,15 +61,10 @@ setopt inc_append_history     # Save commands are added to the history immediate
 alias history="history 0"     # force zsh to show the complete history
 
 
-# Using GNU tools
-export PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
 
 # Enable color support of ls, less and man, and also add handy aliases 
 if command -v dircolors &> /dev/null; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r ~/.dircolors && eval "$(dircolors -b $ZDOTDIR/.dircolors)" || eval "$(dircolors -b)"
 
     alias ls="ls --color=auto"
     alias dir="dir --color=auto"
@@ -171,5 +166,3 @@ if [ -f '/Users/phhphc/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/phhphc/g
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/phhphc/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/phhphc/google-cloud-sdk/completion.zsh.inc'; fi
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

@@ -2,6 +2,12 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$(brew --prefix)/bin":$PATH
 
+# Using GNU tools
+export PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
+
 # user binary
 # export PATH=$HOME/bin:$PATH
 export PATH=$PATH:$HOME/bin
@@ -15,26 +21,13 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # Added by Toolbox App
-export PATH="$PATH:/Users/phhphc/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 # openjdk
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
 
 # config work alias 
 alias lkf="source /Users/phhphc/Projects/kinfra-devenv/sourcing"
-
-##
-# Your previous /Users/phhphc/.zprofile file was backed up as /Users/phhphc/.zprofile.macports-saved_2024-02-15_at_16:05:43
-##
-
-# MacPorts Installer addition on 2024-02-15_at_16:05:43: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-
-# MacPorts Installer addition on 2024-02-15_at_16:05:43: adding an appropriate MANPATH variable for use with MacPorts.
-export MANPATH="/opt/local/share/man:$MANPATH"
-# Finished adapting your MANPATH environment variable for use with MacPorts.
 
 # java version manager
 export PATH="$HOME/.jenv/bin:$PATH"
