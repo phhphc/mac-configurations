@@ -7,13 +7,9 @@ return {
     version = "^5.0.0",
     cmd = { "KittyScrollbackGenerateKittens", "KittyScrollbackCheckHealth" },
     event = { "User KittyScrollbackLaunch" },
-    opts = {
-      ksb_builtin_get_text_all = {
-        kitty_get_text = {
-          ansi = true,
-        },
-      },
-    },
+    config = function ()
+        vim.opt.showtabline = 0
+    end
   },
   -- kitty & nvim seamless navigate
   { "mrjones2014/smart-splits.nvim", build = "./kitty/install-kittens.bash" },
