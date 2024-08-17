@@ -21,6 +21,6 @@ for plugin in "$ZDOTDIR/plugins"/*.zsh; do
 done
 
 # load custom configs
-for file in "$ZDOTDIR/zshrc.d"/*.zsh; do
+for file in "$ZDOTDIR/zsh.d"/*.zsh; do
     source "$file"
 done
