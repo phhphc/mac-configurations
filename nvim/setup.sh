@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ln -s $PWD/config ~/.config/nvim
+ln -s "$PWD"/config ~/.config/nvim

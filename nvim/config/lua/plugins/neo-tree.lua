@@ -2,11 +2,10 @@
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      window = {
-        position = "current",
-      },
-    },
+    opts = function(_, opts)
+      opts.window.position = "current"
+      opts.window.mappings["<esc>"] = "close_window"
+    end,
   },
   {
     "AstroNvim/astrocore",
@@ -19,11 +18,10 @@ return {
             function()
               local reveal_file = vim.fn.expand "%:p"
               local curr_dir = vim.fn.getcwd()
-              local file_in_dir = reveal_file:sub(1, #curr_dir) == curr_dir
+              local is_file_in_dir = reveal_file:sub(1, #curr_dir) == curr_dir
               local opts = {
                 source = "last",
-                toggle = true,
-                reveal = file_in_dir,
+                reveal = is_file_in_dir,
               }
               require("neo-tree.command").execute(opts)
             end,
