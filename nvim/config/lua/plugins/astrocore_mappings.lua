@@ -17,9 +17,6 @@ return {
         -- add utility
         ["<Leader>W"] = { "<Cmd>wa<CR>", desc = "Save all" },
       },
-      t = {
-        ["<F8>"] = { "<C-\\><C-n>" },
-      },
     },
   },
 }

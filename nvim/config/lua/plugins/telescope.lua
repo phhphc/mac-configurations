@@ -3,6 +3,8 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = function(_, opts)
       opts.defaults.initial_mode = "normal"
+      opts.defaults.layout_config.horizontal.width = 0.99
+      opts.defaults.layout_config.horizontal.height = 0.99
       opts.pickers = {
         lsp_references = { fname_width = 999 },
         lsp_implementations = { fname_width = 999 },
