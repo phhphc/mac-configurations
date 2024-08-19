@@ -13,12 +13,9 @@ if [[ -f $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme ]]; then
 fi 
 
 # load shell config
-source "$ZDOTDIR/config.zshrc"
-
+source "$ZDOTDIR/config.zsh"
 # load plugins
-for plugin in "$ZDOTDIR/plugins"/*.zsh; do
-    source "$plugin"
-done
+source "$ZDOTDIR/plugins.zsh"
 
 # load custom configs
 for file in "$ZDOTDIR/zsh.d"/*.zsh; do
