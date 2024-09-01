@@ -2,8 +2,8 @@
   "Export React Arrow Component": {
     "prefix": "ec",
     "body": [
-      "import React from \"react\"",
       "import \"twin.macro\"",
+      "import React from \"react\"",
       "",
       "export const $TM_FILENAME_BASE: React.FC = () => {",
       "\treturn <$0",
@@ -13,7 +13,11 @@
   },
   "React Arrow Component": {
     "prefix": "rc",
-    "body": ["const $1: React.FC = () => {", "\treturn $0", "}"],
+    "body": [
+      "const $1: React.FC = () => {",
+      "\treturn $0",
+      "}"
+    ],
     "description": "React Arrow Component"
   }
 }
