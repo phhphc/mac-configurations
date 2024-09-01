@@ -21,3 +21,4 @@ source "$ZDOTDIR/plugins.zsh"
 for file in "$ZDOTDIR/zsh.d"/*.zsh; do
     source "$file"
 done
+
