@@ -19,6 +19,14 @@ return {
     ---@type AstroUIOpts
     opts = {
       colorscheme = "catppuccin",
+      highlights = {
+        ["catppuccin-mocha"] = {
+          SpellBad = {
+            undercurl = true,
+            sp = "#a6e3a1",
+          },
+        },
+      },
     },
   },
 }

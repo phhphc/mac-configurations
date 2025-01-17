@@ -2,12 +2,23 @@
   "Export React Arrow Component": {
     "prefix": "ec",
     "body": [
-      "import \"twin.macro\"",
       "import React from \"react\"",
       "",
       "export const $TM_FILENAME_BASE: React.FC = () => {",
       "\treturn <$0",
       "}"
+    ],
+    "description": "React Arrow Component file template"
+  },
+  "NextJS Export React Arrow Component": {
+    "prefix": "nec",
+    "body": [
+      "\"use client\";",
+      "import React from \"react\";",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC = () => {",
+      "\treturn <div>$0</div>",
+      "};"
     ],
     "description": "React Arrow Component file template"
   },

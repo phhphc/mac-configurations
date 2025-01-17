@@ -51,12 +51,7 @@
                     "key_code": "return_or_enter"
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "description": "CapsLock set `do_modify_action` to `1` when pressed, Esc if press alone",
-            "manipulators": [
+              },
               {
                 "type": "basic",
                 "from": {
@@ -92,7 +87,7 @@
             ]
           },
           {
-            "description": "h j k l to arrow key",
+            "description": "h j k l to arrow key, u to caps_lock",
             "manipulators": [
               {
                 "type": "basic",
@@ -223,6 +218,39 @@
                 "to": [
                   {
                     "key_code": "up_arrow"
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "modify_action",
+                    "value": true
+                  },
+                  {
+                    "type": "variable_unless",
+                    "name": "with_hyper",
+                    "value": true
+                  },
+                  {
+                    "type": "variable_unless",
+                    "name": "window_management",
+                    "value": true
+                  }
+                ],
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "optional": [
+                      "caps_lock"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "caps_lock"
                   }
                 ]
               }

@@ -21,7 +21,7 @@ import {
 
 const rules: Rule[] = [
   {
-    description: "h j k l to arrow key",
+    description: "h j k l to arrow key, u to caps_lock",
     manipulators: [
       {
         type: "basic",
@@ -63,6 +63,12 @@ const rules: Rule[] = [
           },
         ],
       },
+      {
+        type: "basic",
+        conditions: ifModifyAction,
+        from: { key_code: "u", modifiers: { optional: ["caps_lock"] } },
+        to: [{ key_code: "caps_lock" }]
+      }
     ],
   },
 ];
