@@ -1,12 +1,11 @@
 [[manager.prepend_keymap]]
-on   = [ "<C-d>" ]
-exec = '''
+on = ["<C-d>"]
+run = '''
 	shell 'drag "$1"' --confirm
 '''
 desc = "Drag file(s) or folder(s)"
 
-
 [[manager.prepend_keymap]]
-on   = [ "H" ]
-exec = '''hidden toggle'''
+on = ["H"]
+run = 'hidden toggle'
 desc = "Toggle hidden"
