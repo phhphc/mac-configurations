@@ -1,0 +1,83 @@
+let mapleader = " "
+
+set number
+set relativenumber
+set ignorecase
+set smartcase
+set visualbell
+set noerrorbells
+set hlsearch
+
+set clipboard=unnamedplus
+
+nmap gf <Action>(Find)
+vmap gn <Action>(SelectNextOccurrence)
+
+nmap <Space>a <Action>(Annotate)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+
+noremap ]b :tabn<Cr>
+noremap [b :tabp<Cr>
+vnoremap ]b :tabn<Cr>
+vnoremap [b :tabp<Cr>
+nmap ]f <Action>(MethodUp)
+nmap [f <Action>(MethodDown)
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap ]g <Action>(NextDiff)
+nmap [g <Action>(PreviousDiff)
+
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+
+nmap <leader>lf <Action>(ReformatCode)
+nmap <leader>lr <Action>(RenameElement)
+nmap <leader>la <Action>(ShowIntentionActions)
+
+nmap <leader>gs <Action>(GotoSuperMethod)
+nmap gI <Action>(GotoImplementation)
+nmap gr <Action>(ShowUsages)
+nmap gy <Action>(GotoTypeDeclaration)
+nmap gl <Action>(ShowErrorDescription)
+nmap <leader>o <Action>(RecentFiles)
+nmap <leader>w <Action>(SaveDocument)
+
+nmap <leader>f' <Action>(ShowBookmarks)
+nmap <leader>fw <Action>(FindInPath)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fc viw<Action>(FindInPath)<Esc>
+nmap za <Action>(ExpandCollapseToggleAction)
+nmap <leader>c <Action>(CloseContent)
+
+vmap <leader>je <Action>(Console.Jdbc.Execute)
+nmap <leader>je <Action>(Console.Jdbc.Execute)
+
+nmap <leader>fT <Action>(ActivateTODOToolWindow)
+
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+
+inoremap jj <Esc>
+inoremap jk <Esc>
+noremap H Hzz
+noremap L Lzz
+
+# visual star
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+function! s:VSetSearch()
+    let temp = @s
+    norm! gv"sy
+    let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g') let @s = temp
+endfunction
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+nmap <leader>e :NERDTreeFocus<CR>
+
+nmap <leader>/ gcc
+vmap <leader>/ gc
+set clipboard^=ideaput
