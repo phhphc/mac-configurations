@@ -20,8 +20,8 @@ noremap ]b :tabn<Cr>
 noremap [b :tabp<Cr>
 vnoremap ]b :tabn<Cr>
 vnoremap [b :tabp<Cr>
-nmap ]f <Action>(MethodUp)
-nmap [f <Action>(MethodDown)
+nmap [f <Action>(MethodUp)
+nmap ]f <Action>(MethodDown)
 nmap ]d <Action>(GotoNextError)
 nmap [d <Action>(GotoPreviousError)
 nmap ]g <Action>(NextDiff)
@@ -81,3 +81,5 @@ nmap <leader>e :NERDTreeFocus<CR>
 nmap <leader>/ gcc
 vmap <leader>/ gc
 set clipboard^=ideaput
+
+set ideajoin
