@@ -24,7 +24,9 @@ return {
   { import = "astrocommunity.editing-support.treesj" },
 
   -- pack
+  { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.go" },
