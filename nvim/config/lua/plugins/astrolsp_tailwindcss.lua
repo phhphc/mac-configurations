@@ -8,7 +8,7 @@ return {
       local tailwindcss = opts.config.tailwindcss or {}
       local settings = tailwindcss.settings or {}
       settings.tailwindCSS = settings.tailwindCSS or {}
-      settings.tailwindCSS.classAttributes = { "tw", "className" }
+      settings.tailwindCSS.classAttributes = { "tw", "class", "className" }
       settings.tailwindCSS.experimental = settings.tailwindCSS.experimental or {}
       settings.tailwindCSS.experimental.classRegex = {
         "tw`([^`]*)`",
