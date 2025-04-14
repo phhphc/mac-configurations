@@ -257,7 +257,7 @@
             ]
           },
           {
-            "description": "iterm, clipboard",
+            "description": "iterm, clipboard, editor",
             "manipulators": [
               {
                 "type": "basic",
@@ -314,6 +314,37 @@
                     "key_code": "f20",
                     "modifiers": [
                       "left_shift"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "modify_action",
+                    "value": true
+                  },
+                  {
+                    "type": "variable_unless",
+                    "name": "with_hyper",
+                    "value": true
+                  },
+                  {
+                    "type": "variable_unless",
+                    "name": "window_management",
+                    "value": true
+                  }
+                ],
+                "from": {
+                  "key_code": "v"
+                },
+                "to": [
+                  {
+                    "key_code": "f20",
+                    "modifiers": [
+                      "left_option"
                     ]
                   }
                 ]

@@ -4,6 +4,7 @@ import { KeyCode } from "../types/key_code";
 import {
   lock_screen,
   toggle_clipboard,
+  toggle_editor,
   toggle_iterm,
   window_almost_maximize,
   window_maximize,
@@ -67,8 +68,8 @@ const rules: Rule[] = [
         type: "basic",
         conditions: ifModifyAction,
         from: { key_code: "u", modifiers: { optional: ["caps_lock"] } },
-        to: [{ key_code: "caps_lock" }]
-      }
+        to: [{ key_code: "caps_lock" }],
+      },
     ],
   },
 ];
@@ -77,7 +78,7 @@ addRules(rules);
 
 const rr: Rule[] = [
   {
-    description: "iterm, clipboard",
+    description: "iterm, clipboard, editor",
     manipulators: [
       {
         type: "basic",
@@ -94,6 +95,14 @@ const rr: Rule[] = [
           key_code: "c",
         },
         to: [toggle_clipboard],
+      },
+      {
+        type: "basic",
+        conditions: ifModifyAction,
+        from: {
+          key_code: "v",
+        },
+        to: [toggle_editor],
       },
       {
         type: "basic",
