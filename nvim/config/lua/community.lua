@@ -6,10 +6,6 @@
 return {
   "AstroNvim/astrocommunity",
 
-  -- ui
-  { import = "astrocommunity.recipes.heirline-vscode-winbar" },
-  { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
-
   -- motion
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.motion.marks-nvim" },

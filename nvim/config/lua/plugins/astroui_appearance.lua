@@ -1,5 +1,8 @@
 ---@type LazySpec
 return {
+  { import = "astrocommunity.recipes.disable-tabline" },
+  { import = "astrocommunity.recipes.heirline-vscode-winbar" },
+  { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   -- icon config
   { import = "astrocommunity.recipes.vscode-icons" },
   {
