@@ -4,4 +4,4 @@
 brew install luarocks
 
 # telescope dependencies
-brew install fzf fd
+brew install rg fd
