@@ -17,3 +17,5 @@ alias b='bun'
 alias n='node'
 alias p='python'
 alias v='nvim'
+alias v2='NVIM_APPNAME=nvim2 nvim'
+
