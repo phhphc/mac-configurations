@@ -4,5 +4,5 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.g.number = true
-vim.g.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
