@@ -4,7 +4,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-
-vim.opt.scrolloff = 4
+if vim.g.vscode then
+-- VSCode extension
+else
+	-- ordinary Neovim
+	vim.opt.number = true
+	vim.opt.relativenumber = true
+	vim.opt.scrolloff = 4
+end
