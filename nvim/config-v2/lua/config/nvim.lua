@@ -5,7 +5,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 if vim.g.vscode then
--- VSCode extension
+	-- VSCode extension
+	require("config.vscode")
 else
 	-- ordinary Neovim
 	vim.opt.number = true
