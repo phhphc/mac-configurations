@@ -4,6 +4,12 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Disable Neovim new keymap
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "gra")
+
 if vim.g.vscode then
 	-- VSCode extension
 	require("config.vscode")
