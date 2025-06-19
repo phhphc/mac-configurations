@@ -13,11 +13,11 @@ return {
 
   -- git
   { import = "astrocommunity.git.diffview-nvim" },
-  { import = "astrocommunity.git.git-blame-nvim" },
+  -- { import = "astrocommunity.git.git-blame-nvim" },
 
   -- support
-  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
-  { import = "astrocommunity.editing-support.treesj" },
+  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  -- { import = "astrocommunity.editing-support.treesj" },
 
   -- pack
   { import = "astrocommunity.pack.svelte" },
