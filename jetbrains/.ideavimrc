@@ -27,6 +27,8 @@ nmap [d <Action>(GotoPreviousError)
 nmap ]g <Action>(NextDiff)
 nmap [g <Action>(PreviousDiff)
 
+nmap <leader>n :nohl<cr>
+
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 nmap <C-j> <C-w>j
@@ -37,7 +39,7 @@ nmap <leader>lr <Action>(RenameElement)
 nmap <leader>la <Action>(ShowIntentionActions)
 
 nmap <leader>gs <Action>(GotoSuperMethod)
-nmap gI <Action>(GotoImplementation)
+nmap gi <Action>(GotoImplementation)
 nmap gr <Action>(ShowUsages)
 nmap gy <Action>(GotoTypeDeclaration)
 nmap gl <Action>(ShowErrorDescription)
@@ -63,23 +65,34 @@ inoremap jk <Esc>
 noremap H Hzz
 noremap L Lzz
 
-# visual star
-xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
-function! s:VSetSearch()
-    let temp = @s
-    norm! gv"sy
-    let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g') let @s = temp
+function! s:VSetSearch(cmdtype)
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
+  let @s = temp
 endfunction
+xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
+
+
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'preservim/nerdtree'
-nmap <leader>e :NERDTreeFocus<CR>
+
 
 nmap <leader>/ gcc
 vmap <leader>/ gc
 set clipboard^=ideaput
 
 set ideajoin
+
+let g:NERDTreeMapOpenSplit = "S"
+let g:NERDTreeMapNewFile = "a"
+let g:NERDTreeMapNewDir = "A"
+let g:NERDTreeMapActivateNode = "l"
+let g:NERDTreeMapJumpParent = "h"
+let g:NERDTreeMapCloseDir = "C"
+Plug 'preservim/nerdtree'
+nmap <leader>e :NERDTreeFocus<CR>
+
