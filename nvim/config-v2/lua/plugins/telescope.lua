@@ -1,7 +1,8 @@
+local event = require("lazy.core.handler.event")
 ---@type LazySpec[]
 return {
 	{
-		lazy = false,
+		event = "VeryLazy",
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
 		dependencies = { "nvim-lua/plenary.nvim" },
