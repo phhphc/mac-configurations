@@ -18,4 +18,6 @@ else
 	vim.opt.number = true
 	vim.opt.relativenumber = true
 	vim.opt.scrolloff = 4
+
+	vim.opt.winborder = "rounded"
 end
