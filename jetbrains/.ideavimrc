@@ -65,16 +65,9 @@ inoremap jk <Esc>
 noremap H Hzz
 noremap L Lzz
 
-function! s:VSetSearch(cmdtype)
-  let temp = @s
-  norm! gv"sy
-  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
-  let @s = temp
-endfunction
-xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
-
-
+" visual star, this contain a bug while search string contain \
+xnoremap * "sy/\V<C-R>s<cr>
+xnoremap # "sy?\V<C-R>s<cr>
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
