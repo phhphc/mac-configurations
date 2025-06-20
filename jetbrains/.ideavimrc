@@ -13,13 +13,13 @@ set clipboard=unnamedplus
 nmap gf <Action>(Find)
 vmap gn <Action>(SelectNextOccurrence)
 
-nmap <Space>a <Action>(Annotate)
 nmap <leader>db <Action>(ToggleLineBreakpoint)
 
 noremap ]b :tabn<Cr>
 noremap [b :tabp<Cr>
 vnoremap ]b :tabn<Cr>
 vnoremap [b :tabp<Cr>
+
 nmap [f <Action>(MethodUp)
 nmap ]f <Action>(MethodDown)
 nmap ]d <Action>(GotoNextError)
@@ -38,48 +38,55 @@ nmap <leader>lf <Action>(ReformatCode)
 nmap <leader>lr <Action>(RenameElement)
 nmap <leader>la <Action>(ShowIntentionActions)
 
-nmap <leader>gs <Action>(GotoSuperMethod)
+
+nmap gd <Action>(GotoDeclaration)
 nmap gi <Action>(GotoImplementation)
+nmap gI <Action>(GotoSuperMethod)
 nmap gr <Action>(ShowUsages)
 nmap gy <Action>(GotoTypeDeclaration)
 nmap gl <Action>(ShowErrorDescription)
+
+
 nmap <leader>o <Action>(RecentFiles)
 nmap <leader>w <Action>(SaveDocument)
+nmap <leader>g <Action>(Annotate)
 
 nmap <leader>f' <Action>(ShowBookmarks)
-nmap <leader>fw <Action>(FindInPath)
+nmap <leader>fw <Action>(TextSearchAction)
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fc viw<Action>(FindInPath)<Esc>
+nmap <leader>fT <Action>(ActivateTODOToolWindow)
+
 nmap za <Action>(ExpandCollapseToggleAction)
+
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+
+
+nmap <leader>r <Action>(IdeaVim.ReloadVimRc.reload)
+nmap <leader>p <Action>(GotoAction)
 nmap <leader>c <Action>(CloseContent)
 
 vmap <leader>je <Action>(Console.Jdbc.Execute)
 nmap <leader>je <Action>(Console.Jdbc.Execute)
-
-nmap <leader>fT <Action>(ActivateTODOToolWindow)
-
-nmap <leader>db <Action>(ToggleLineBreakpoint)
 
 inoremap jj <Esc>
 inoremap jk <Esc>
 noremap H Hzz
 noremap L Lzz
 
+
 " visual star, this contain a bug while search string contain \
 xnoremap * "sy/\V<C-R>s<cr>
 xnoremap # "sy?\V<C-R>s<cr>
 
-Plug 'machakann/vim-highlightedyank'
+
+" Comment plugin
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-
-
 nmap <leader>/ gcc
 vmap <leader>/ gc
-set clipboard^=ideaput
 
-set ideajoin
 
+" NERDTree plugin
 let g:NERDTreeMapOpenSplit = "S"
 let g:NERDTreeMapNewFile = "a"
 let g:NERDTreeMapNewDir = "A"
@@ -89,3 +96,10 @@ let g:NERDTreeMapCloseDir = "C"
 Plug 'preservim/nerdtree'
 nmap <leader>e :NERDTreeFocus<CR>
 
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-surround'
+
+
+set ideajoin
+set clipboard^=ideaput
