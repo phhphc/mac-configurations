@@ -1,0 +1,34 @@
+{
+  "Export React Arrow Component": {
+    "prefix": "ec",
+    "body": [
+      "import React from \"react\"",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC = () => {",
+      "\treturn <$0",
+      "}"
+    ],
+    "description": "React Arrow Component file template"
+  },
+  "NextJS Export React Arrow Component": {
+    "prefix": "nec",
+    "body": [
+      "\"use client\";",
+      "import React from \"react\";",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC = () => {",
+      "\treturn <div>$0</div>",
+      "};"
+    ],
+    "description": "React Arrow Component file template"
+  },
+  "React Arrow Component": {
+    "prefix": "rc",
+    "body": [
+      "const $1: React.FC = () => {",
+      "\treturn $0",
+      "}"
+    ],
+    "description": "React Arrow Component"
+  }
+}
