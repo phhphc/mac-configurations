@@ -7,6 +7,7 @@ return {
   "AstroNvim/astrocommunity",
 
   -- motions
+  { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.motion.marks-nvim" },
 
   -- languages
