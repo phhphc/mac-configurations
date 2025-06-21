@@ -6,23 +6,12 @@
 return {
   "AstroNvim/astrocommunity",
 
-  -- motion
-  { import = "astrocommunity.motion.hop-nvim" },
-  { import = "astrocommunity.motion.marks-nvim" },
+  -- motions
   { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.motion.marks-nvim" },
 
-  -- git
-  { import = "astrocommunity.git.diffview-nvim" },
-  -- { import = "astrocommunity.git.git-blame-nvim" },
-
-  -- support
-  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
-  -- { import = "astrocommunity.editing-support.treesj" },
-
-  -- pack
-  { import = "astrocommunity.pack.svelte" },
+  -- languages
   { import = "astrocommunity.pack.bash" },
-  { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.go" },
@@ -33,6 +22,8 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.yaml" },
