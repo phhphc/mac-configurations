@@ -1,8 +1,6 @@
 [[manager.prepend_keymap]]
-on = ["<C-d>"]
-run = '''
-	shell 'drag "$1"' --confirm
-'''
+on = "<C-d>"
+run = 'shell -- drag "$1"'
 desc = "Drag file(s) or folder(s)"
 
 [[manager.prepend_keymap]]
