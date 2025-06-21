@@ -5,7 +5,11 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+
+  -- motions
+  { import = "astrocommunity.motion.marks-nvim" },
+
+  -- languages
   { import = "astrocommunity.pack.lua" },
-  -- import/override with your plugins folder
   { import = "astrocommunity.pack.go" },
 }
