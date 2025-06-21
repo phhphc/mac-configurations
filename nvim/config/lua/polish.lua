@@ -1,5 +1,9 @@
-if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- remove neovim default lsp key binding
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "grn")
+vim.keymap.del({ "n", "x" }, "gra")
+vim.keymap.del("n", "gri")
 
--- This will run last in the setup process.
--- This is just pure lua so anything that doesn't
--- fit in the normal config locations above can go here
+-- config spell
+vim.opt.spell = false
+vim.opt.spelllang = "en,vi"
