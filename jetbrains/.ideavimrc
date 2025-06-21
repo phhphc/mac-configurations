@@ -52,7 +52,8 @@ nmap <leader>w <Action>(SaveDocument)
 nmap <leader>g <Action>(Annotate)
 
 nmap <leader>f' <Action>(ShowBookmarks)
-nmap <leader>fw <Action>(TextSearchAction)
+nmap <leader>fw <Action>(FindInPath)
+nmap <leader>fr <Action>(ReplaceInPath)
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fc viw<Action>(FindInPath)<Esc>
 nmap <leader>fT <Action>(ActivateTODOToolWindow)
@@ -91,8 +92,7 @@ let g:NERDTreeMapOpenSplit = "S"
 let g:NERDTreeMapNewFile = "a"
 let g:NERDTreeMapNewDir = "A"
 let g:NERDTreeMapActivateNode = "l"
-let g:NERDTreeMapJumpParent = "h"
-let g:NERDTreeMapCloseDir = "C"
+let g:NERDTreeMapCloseDir = "h"
 Plug 'preservim/nerdtree'
 nmap <leader>e :NERDTreeFocus<CR>
 
