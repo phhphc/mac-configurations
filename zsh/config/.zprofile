@@ -14,7 +14,8 @@ export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
 
 # user binary
 # export PATH=$HOME/bin:$PATH
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin # TODO: remove this line
+export PATH=$PATH:"$HOME/.user-config/.bin"
 
 # Go bin path
 if command -v go &> /dev/null; then 
