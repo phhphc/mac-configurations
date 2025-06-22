@@ -10,3 +10,9 @@ vim.keymap.del("n", "gri")
 -- config spell
 vim.opt.spell = false
 vim.opt.spelllang = "en,vi"
+
+-- fix JetBrains terminal render error
+if vim.env.TERMINAL_EMULATOR == "JetBrains-JediTerm" then
+  vim.opt.cmdheight = 1
+  vim.opt.laststatus = 0
+end
