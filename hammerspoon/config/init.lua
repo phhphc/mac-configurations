@@ -229,3 +229,22 @@ function launchOrFocusIntellij()
 end
 
 hs.hotkey.bind(masterKey, "J", launchOrFocusIntellij)
+
+-- test modal mode
+k = hs.hotkey.modal.new("ctrl-shift", "o")
+function k:entered()
+  hs.alert("Entered mode")
+end
+
+function k:exited()
+  hs.alert("Exited mode")
+end
+
+k:bind("", "escape", function()
+  k:exit()
+end)
+k:bind("", "J", function()
+  print("let the record show that J was pressed")
+  launchOrFocusIntellij()
+  k:exit()
+end)
