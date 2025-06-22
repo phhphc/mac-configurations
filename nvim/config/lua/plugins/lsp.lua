@@ -4,7 +4,7 @@ return {
   opts = {
     diagnostics = {
       virtual_text = false,
-      virtual_lines = true,
+      virtual_lines = false,
       update_in_insert = false,
     },
   },
