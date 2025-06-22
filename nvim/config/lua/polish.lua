@@ -1,3 +1,6 @@
+-- remove vim buildin commands
+vim.keymap.set({ "n", "x" }, "s", "<Nop>", { noremap = true, silent = true })
+
 -- remove neovim default lsp key binding
 vim.keymap.del("n", "grr")
 vim.keymap.del("n", "grn")
