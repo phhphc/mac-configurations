@@ -192,3 +192,40 @@ hs.hotkey.bind({ "cmd", "alt", "shift" }, "D", mouseHighlight)
 hs.urlevent.bind("someAlert", function(eventName, params)
   hs.alert.show("Received someAlert")
 end)
+
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+---Begin my config -------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+
+local masterKey = { "cmd", "alt" }
+
+function launchOrFocusIntellij()
+  hs.alert.show("launch or focus intellij")
+  local app = hs.appfinder.appFromName("IntelliJ IDEA")
+  if app then
+    hs.alert.show("IntelliJ IDEA Ultimate found")
+    hs.alert.show(hs.inspect(app))
+    local ws = app:findWindow("welcome")
+    if not ws then
+      hs.alert.show("No window welcome")
+    else
+      ws:focus()
+    end
+  else
+    hs.alert.show("IntelliJ IDEA Ultimate not found")
+  end
+end
+
+hs.hotkey.bind(masterKey, "J", launchOrFocusIntellij)
