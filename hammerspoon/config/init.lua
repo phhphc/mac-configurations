@@ -1,20 +1,36 @@
 hs.alert.show("New config reloaded")
 
-hs.hotkey.bind("command-option-control-shift", "f15", function()
+local masterKey = {
+	mod = "command-option-control-shift",
+	key = "f15",
+}
+
+hs.hotkey.bind(masterKey.mod, masterKey.key, function()
 	local choices = {}
 
 	-- Get all windows (including hidden/minimized)
 	local allWindows = hs.window.allWindows()
 
 	for _, win in ipairs(allWindows) do
-		local appName = win:application():name()
-		local title = win:title()
+		local app = win:application()
+		if app then
+			local appName = app:name() or "Unknown App"
+			local title = win:title() or "Untitled"
+			local icon = nil
+			
+			-- Get the icon using the correct method
+			local bundleID = app:bundleID()
+			if bundleID then
+				icon = hs.image.imageFromAppBundle(bundleID)
+			end
 
-		table.insert(choices, {
-			text = appName .. " — " .. title,
-			subText = win:id(),
-			win = win, -- save reference for later
-		})
+			table.insert(choices, {
+				text = appName .. " - " .. title,
+				subText = tostring(win:id()),
+				image = icon,
+				win = win, -- save reference for later
+			})
+		end
 	end
 
 	-- Show the chooser
