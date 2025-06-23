@@ -1,0 +1,22 @@
+{
+  "description": "Right command to $Master (Hyper+F15)",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "right_command"
+      },
+      "to": [
+        {
+          "key_code": "f15",
+          "modifiers": [
+            "left_command",
+            "left_option",
+            "left_control",
+            "left_shift"
+          ]
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}
