@@ -104,7 +104,7 @@ end
 
 -- Override the entered/exited functions to show feedback
 function windowModal:entered()
-	hs.alert.show("Window Mode: J=IntelliJ, T=Kitty, F=Firefox, ESC=Exit", topRightAlertStyle)
+	hs.alert.show("Window Mode: J=IntelliJ, T=Kitty, F=Firefox, C=Cursor, ESC=Exit", topRightAlertStyle)
 	
 	-- Start auto-exit timer (1 second)
 	autoExitTimer = hs.timer.doAfter(1, function()
@@ -121,7 +121,7 @@ function windowModal:exited()
 		autoExitTimer = nil
 	end
 	
-	hs.alert.show("Window Mode Exited", topRightAlertStyle)
+	-- hs.alert.show("Window Mode Exited", topRightAlertStyle)
 end
 
 -- Bind keys in modal mode
