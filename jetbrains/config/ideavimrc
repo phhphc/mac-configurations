@@ -66,6 +66,7 @@ nmap <leader>db <Action>(ToggleLineBreakpoint)
 nmap <leader>r <Action>(IdeaVim.ReloadVimRc.reload)
 nmap <leader>p <Action>(GotoAction)
 nmap <leader>c <Action>(CloseContent)
+nmap <leader>a <Action>(Annotate)
 
 vmap <leader>je <Action>(Console.Jdbc.Execute)
 nmap <leader>je <Action>(Console.Jdbc.Execute)
