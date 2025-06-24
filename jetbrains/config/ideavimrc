@@ -100,6 +100,7 @@ nmap <leader>e :NERDTreeFocus<CR>
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-surround'
 
+set incsearch
 
 set ideajoin
 set clipboard^=ideaput
