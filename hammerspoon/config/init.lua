@@ -129,6 +129,7 @@ windowModal:bind('', 'j', nil, handleWindowSelection("IntelliJ IDEA", "IntelliJ 
 windowModal:bind('', 't', nil, handleWindowSelection("kitty", "Kitty"))
 windowModal:bind('', 'f', nil, handleWindowSelection("Firefox", "Firefox"))
 windowModal:bind('', 'c', nil, handleWindowSelection("Cursor", "Cursor"))
+windowModal:bind('', 'o', nil, handleWindowSelection("Obsidian", "Obsidian"))
 
 -- Bind escape key to exit modal
 windowModal:bind('', 'escape', function() 
