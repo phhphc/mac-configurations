@@ -131,6 +131,7 @@ windowModal:bind("", "f", nil, handleWindowSelection("Firefox", "Firefox"))
 windowModal:bind("", "c", nil, handleWindowSelection("Cursor", "Cursor"))
 windowModal:bind("", "o", nil, handleWindowSelection("Obsidian", "Obsidian"))
 windowModal:bind("", "z", nil, handleWindowSelection("Zalo", "Zalo"))
+windowModal:bind("", "a", nil, handleWindowSelection("ChatGPT", "GPTalo"))
 
 -- Bind escape key to exit modal
 windowModal:bind("", "escape", function()
