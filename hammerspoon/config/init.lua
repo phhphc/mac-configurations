@@ -127,13 +127,13 @@ function windowModal:exited()
 end
 
 -- Bind keys in modal mode
-windowModal:bind("", "j", nil, handleWindowSelection("IntelliJ IDEA", "IntelliJ IDEA"))
-windowModal:bind("", "t", nil, handleWindowSelection("kitty", "Kitty"))
-windowModal:bind("", "f", nil, handleWindowSelection("Firefox", "Firefox"))
-windowModal:bind("", "c", nil, handleWindowSelection("Cursor", "Cursor"))
-windowModal:bind("", "o", nil, handleWindowSelection("Obsidian", "Obsidian"))
-windowModal:bind("", "z", nil, handleWindowSelection("Zalo", "Zalo"))
-windowModal:bind("", "a", nil, handleWindowSelection("ChatGPT", "GPTalo"))
+windowModal:bind("", "j",  handleWindowSelection("IntelliJ IDEA", "IntelliJ IDEA") )
+windowModal:bind("", "t",  handleWindowSelection("kitty", "Kitty"))
+windowModal:bind("", "f",  handleWindowSelection("Firefox", "Firefox"))
+windowModal:bind("", "c",  handleWindowSelection("Cursor", "Cursor"))
+windowModal:bind("", "o",  handleWindowSelection("Obsidian", "Obsidian"))
+windowModal:bind("", "z",  handleWindowSelection("Zalo", "Zalo"))
+windowModal:bind("", "a",  handleWindowSelection("ChatGPT", "GPTalo"))
 
 -- Bind escape key to exit modal
 windowModal:bind("", "escape", function()
