@@ -1,5 +1,7 @@
 hs.alert.show("New config reloaded")
 
+hs.loadSpoon("EmmyLua")
+
 local masterKey = {
 	mod = "command-option-control-shift",
 	key = "f15",
