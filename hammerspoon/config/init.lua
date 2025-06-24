@@ -1,4 +1,4 @@
 hs.alert.show("New config reloaded")
 hs.loadSpoon("EmmyLua")
 
-require("src.apps")
+require("src.window_focus")
