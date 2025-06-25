@@ -68,6 +68,24 @@ local topRightAlertStyle = {
 	fadeOutDuration = 0.15,
 }
 
+---@param choices {win: hs.window}[]
+local function startChooseWindow(choices)
+	---@param choice {win: hs.window}
+	local chooser = hs.chooser.new(function(choice)
+		if choice and choice.win then
+			local win = choice.win
+			---@type hs.application | nil
+			local app = win:application()
+			if app then app:activate() end
+			win:focus()
+		end
+	end)
+
+	chooser:choices(choices)
+	chooser:searchSubText(true)
+	chooser:show()
+end
+
 -- Helper function to handle window selection logic
 local function handleWindowSelection(appName, appDisplayName)
 	return function()
@@ -91,17 +109,7 @@ local function handleWindowSelection(appName, appDisplayName)
 			win:focus()
 			alert:show("Focused " .. appDisplayName .. " window", 0.4)
 		else
-			local chooser = hs.chooser.new(function(choice)
-				if choice and choice.win then
-					local win = choice.win
-					win:application():activate()
-					win:focus()
-				end
-			end)
-
-			chooser:choices(choices)
-			chooser:searchSubText(true)
-			chooser:show()
+			startChooseWindow(choices)
 		end
 		windowModal:exit()
 	end
