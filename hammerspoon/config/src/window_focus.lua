@@ -127,8 +127,9 @@ function windowModal:exited()
 	end
 
 	if not launchedApp then
-		launchedApp = false
 		alert:close()
+	else
+		launchedApp = false
 	end
 end
 
