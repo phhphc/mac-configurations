@@ -73,7 +73,7 @@ local topRightAlertStyle = {
 local function startChooseWindow(choices)
 	local titles = {}
 	for _, choice in ipairs(choices) do
-		table.insert(titles, choice.win:title())
+		table.insert(titles, choice.text)
 	end
 	local keys = getChar(titles)
 
@@ -84,23 +84,56 @@ local function startChooseWindow(choices)
 	end
 
 	for _, choice in ipairs(choices) do
+		choice.char = keyByTitle[choice.text]
 		choice.text = keyByTitle[choice.text] .. " -- " .. choice.text
 	end
 
-	---@param choice {win: hs.window}
-	local chooser = hs.chooser.new(function(choice)
-		if choice and choice.win then
-			local win = choice.win
-			---@type hs.application | nil
-			local app = win:application()
-			if app then app:activate() end
-			win:focus()
-		end
-	end)
+	local alertMessage = ""
+	for _, choice in ipairs(choices) do
+		alertMessage = alertMessage .. "\n" .. choice.text
+	end
 
-	chooser:choices(choices)
-	chooser:searchSubText(true)
-	chooser:show()
+	local choseModal = hs.hotkey.modal.new()
+
+	local alertId = nil;
+	local newTimer = nil;
+
+	function choseModal:entered()
+		alertId = hs.alert.show(alertMessage)
+		newTimer = hs.timer.doAfter(10, function() choseModal:exit() end)
+	end
+
+	function choseModal:exited()
+		if alertId then hs.alert.closeSpecific(alertId) end
+		if newTimer then newTimer:stop() end
+	end
+
+	choseModal:bind("", "escape", function() choseModal:exit() end)
+
+	for _, choice in ipairs(choices) do
+		choseModal:bind("", choice.char, function()
+			choice.win:application():activate()
+			choice.win:focus()
+			choseModal:exit()
+		end)
+	end
+
+	choseModal:enter()
+
+	-- ---@param choice {win: hs.window}
+	-- local chooser = hs.chooser.new(function(choice)
+	-- 	if choice and choice.win then
+	-- 		local win = choice.win
+	-- 		---@type hs.application | nil
+	-- 		local app = win:application()
+	-- 		if app then app:activate() end
+	-- 		win:focus()
+	-- 	end
+	-- end)
+
+	-- chooser:choices(choices)
+	-- chooser:searchSubText(true)
+	-- chooser:show()
 end
 
 -- Helper function to handle window selection logic
