@@ -36,7 +36,6 @@ local function createChoicesFromWindows(windows)
 		local app = win:application()
 		if app then
 			local title = win:title()
-			local id = win:id()
 			if title and title ~= "" then
 				-- Get the icon using the correct method
 				local icon = nil
@@ -46,7 +45,7 @@ local function createChoicesFromWindows(windows)
 				end
 
 				table.insert(choices, {
-					text = (id and windowAlias:getAlias(win)) or title,
+					text = windowAlias:getAlias(win),
 					subText = win:screen():name() or "Unknown Screen",
 					image = icon,
 					win = win,
@@ -73,14 +72,23 @@ local topRightAlertStyle = {
 	fadeOutDuration = 0.15,
 }
 
----@param choices {win: hs.window}[]
+---@param choices {win: hs.window, text: string}[]
 local function startChooseWindow(choices)
-	-- local titles = {}
-	-- for _, choice in ipairs(choices) do
-	-- 	table.insert(titles, choice.win:title())
-	-- end
-	-- local keys = getChar(titles)
-	-- hs.alert.show(hs.inspect(keys))
+	local titles = {}
+	for _, choice in ipairs(choices) do
+		table.insert(titles, choice.win:title())
+	end
+	local keys = getChar(titles)
+
+	---@type table<string, string>
+	local keyByTitle = {}
+	for _, key in ipairs(keys) do
+		keyByTitle[key.text] = key.char
+	end
+
+	for _, choice in ipairs(choices) do
+		choice.text = keyByTitle[choice.text] .. " -- " .. choice.text
+	end
 
 	---@param choice {win: hs.window}
 	local chooser = hs.chooser.new(function(choice)
