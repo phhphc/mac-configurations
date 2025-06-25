@@ -1,7 +1,4 @@
-local masterKey = {
-	mod = "command-option-control-shift",
-	key = "f15",
-}
+local MASTER_KEY = "f16"
 
 local alert = require("src.lib.one_alert"):new({
 	textSize = 14,
@@ -181,12 +178,11 @@ windowModal:bind("", "escape", function()
 end)
 
 -- Bind master key to enter modal
-hs.hotkey.bind(masterKey.mod, masterKey.key, function()
+hs.hotkey.bind("", MASTER_KEY, function()
 	windowModal:enter()
 end)
 
-
-hs.hotkey.bind("cmd-shift", "h", function()
+hs.hotkey.bind("control", MASTER_KEY, function()
 	---@type hs.window | nil
 	local win = hs.window.focusedWindow()
 	if win then
