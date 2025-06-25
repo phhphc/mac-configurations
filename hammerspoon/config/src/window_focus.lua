@@ -9,6 +9,8 @@ local alert = require("src.lib.one_alert"):new({
 	atScreenEdge = 1,
 })
 
+local getChar = require("src.lib.key_assignment").getChars
+
 -- Helper function to find windows by application name
 local function findWindowsByAppName(appName)
 	local windows = {}
@@ -70,6 +72,14 @@ local topRightAlertStyle = {
 
 ---@param choices {win: hs.window}[]
 local function startChooseWindow(choices)
+
+	-- local titles = {}
+	-- for _, choice in ipairs(choices) do
+	-- 	table.insert(titles, choice.win:title())
+	-- end
+	-- local keys = getChar(titles)
+	-- hs.alert.show(hs.inspect(keys))
+
 	---@param choice {win: hs.window}
 	local chooser = hs.chooser.new(function(choice)
 		if choice and choice.win then
