@@ -99,8 +99,9 @@ local function startChooseWindow(choices)
 	local newTimer = nil;
 
 	function choseModal:entered()
-		alertId = hs.alert.show(alertMessage)
-		newTimer = hs.timer.doAfter(10, function() choseModal:exit() end)
+		local alertDuration = 10
+		newTimer = hs.timer.doAfter(alertDuration, function() choseModal:exit() end)
+		alertId = hs.alert.show(alertMessage, alertDuration+2)
 	end
 
 	function choseModal:exited()
