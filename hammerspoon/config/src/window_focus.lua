@@ -9,6 +9,8 @@ local alert = require("src.lib.one_alert"):new({
 	atScreenEdge = 1,
 })
 
+local windowAlias = require("src.lib.window_alias"):new()
+
 local getChar = require("src.lib.key_assignment").getChars
 
 -- Helper function to find windows by application name
@@ -34,6 +36,7 @@ local function createChoicesFromWindows(windows)
 		local app = win:application()
 		if app then
 			local title = win:title()
+			local id = win:id()
 			if title and title ~= "" then
 				-- Get the icon using the correct method
 				local icon = nil
@@ -43,7 +46,7 @@ local function createChoicesFromWindows(windows)
 				end
 
 				table.insert(choices, {
-					text = title,
+					text = (id and windowAlias:getAlias(win)) or title,
 					subText = win:screen():name() or "Unknown Screen",
 					image = icon,
 					win = win,
@@ -72,7 +75,6 @@ local topRightAlertStyle = {
 
 ---@param choices {win: hs.window}[]
 local function startChooseWindow(choices)
-
 	-- local titles = {}
 	-- for _, choice in ipairs(choices) do
 	-- 	table.insert(titles, choice.win:title())
@@ -173,4 +175,13 @@ end)
 -- Bind master key to enter modal
 hs.hotkey.bind(masterKey.mod, masterKey.key, function()
 	windowModal:enter()
+end)
+
+
+hs.hotkey.bind("cmd-shift", "h", function()
+	---@type hs.window | nil
+	local win = hs.window.focusedWindow()
+	if win then
+		windowAlias:setAlias(win)
+	end
 end)
