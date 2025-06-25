@@ -3,8 +3,8 @@ WindowAlias Module
 
 A utility for managing custom aliases/names for windows in Hammerspoon.
 Allows users to assign memorable names to windows and automatically cleans up
-aliases when windows are destroyed. When getting an alias, falls back to the
-window's title if no custom alias is set. Useful for window management scripts
+aliases when windows are destroyed.
+When getting an alias, falls back to the window's title if no custom alias is set. Useful for window management scripts
 that need to reference windows by custom names rather than just titles.
 --]]
 

@@ -1,11 +1,12 @@
--- OneAlert - A Hammerspoon Alert Manager
---
--- This module provides a wrapper around Hammerspoon's hs.alert functionality that ensures
--- only one alert is displayed at a time. When a new alert is shown, any existing alert
--- is automatically closed first.
---
--- This is useful for creating clean, non-overlapping notifications in your Hammerspoon
--- configuration without having to manually manage alert lifecycles.
+--[[
+OneAlert Module
+
+This module provides a wrapper around Hammerspoon's hs.alert functionality that ensures
+only one alert is displayed at a time. When a new alert is shown, any existing alert
+is automatically closed first.
+This is useful for creating clean, non-overlapping notifications in your Hammerspoon
+configuration without having to manually manage alert lifecycles.
+--]]
 
 ---@class OneAlert
 ---@field private uuid string | nil The UUID of the currently displayed alert (if any)
