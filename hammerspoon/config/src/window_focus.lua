@@ -6,7 +6,21 @@ local alert = require("src.lib.one_alert"):new({
 	atScreenEdge = 1,
 })
 
+local addShutdownCallback = require("src.lib.shutdown_callback").addShutdownCallback
+
+addShutdownCallback(function()
+	print("begin test shutdown callback 01")
+end)
+
+addShutdownCallback(function()
+	print("begin test shutdown callback 02")
+end)
+
 local windowAlias = require("src.lib.window_alias"):new()
+
+addShutdownCallback(function()
+	windowAlias:backupAliases()
+end)
 
 local getChar = require("src.lib.key_assignment").getChars
 
@@ -101,7 +115,7 @@ local function startChooseWindow(choices)
 	function choseModal:entered()
 		local alertDuration = 10
 		newTimer = hs.timer.doAfter(alertDuration, function() choseModal:exit() end)
-		alertId = hs.alert.show(alertMessage, alertDuration+2)
+		alertId = hs.alert.show(alertMessage, alertDuration + 2)
 	end
 
 	function choseModal:exited()

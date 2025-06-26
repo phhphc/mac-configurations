@@ -3,4 +3,5 @@ description:
 globs: 
 alwaysApply: true
 ---
-this is a hammerspoon config project that help me scripping my macos
+this is a hammerspoon config project that help me scripping my macos.
+in this project, i use lua annotation to ensure type safe.
