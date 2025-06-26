@@ -1,6 +1,5 @@
 local MASTER_KEY = "f16"
 
-local vimKeyModal = require("src.lib.vim_key_modal")
 
 local alert = require("src.lib.one_alert"):new({
 	textSize = 14,
@@ -241,10 +240,11 @@ hs.hotkey.bind("control", MASTER_KEY, function()
 end)
 
 
-local prefixMap = vimKeyModal.target
-prefixMap:add("aa", function() hs.alert.show("aa") end)
-prefixMap:add("ab", function() hs.alert.show("ab") end)
-prefixMap:add("c", function() hs.alert.show("c") end)
+-- local vimKeyModal = require("src.lib.vim_key_modal")
+-- local prefixMap = vimKeyModal.target
+-- prefixMap:add("aa", function() hs.alert.show("aa") end)
+-- prefixMap:add("ab", function() hs.alert.show("ab") end)
+-- prefixMap:add("c", function() hs.alert.show("c") end)
 
 
 -- local windowFilter = hs.window.filter.new({
@@ -256,34 +256,3 @@ prefixMap:add("c", function() hs.alert.show("c") end)
 -- 	"Zalo",
 -- 	"ChatGPT"
 -- })
-
--- ---@param win hs.window
--- windowFilter:subscribe(hs.window.filter.windowDestroyed, function(win)
--- 	---@type number | nil
--- 	local id = win:id()
-
--- 	hs.alert.show("window destroyed: " .. id)
--- end)
-
--- windowFilter:subscribe(hs.window.filter.windowCreated, function(win)
--- 	---@type number | nil
--- 	local id = win:id()
--- 	local title = win:title()
--- 	---@type hs.application | nil
--- 	local app = win:application()
-
--- 	if app == nil or title == "" or id == nil then return end
-
--- 	local firstChar = title:sub(1, 1):lower()
--- 	local secondChar = title:sub(1, 1):lower()
-
--- 	if target[firstChar] == nil then target[firstChar] = {} end
--- 	target[firstChar][secondChar] = function()
--- 		if win:isMinimized() then win:unminimize() end
--- 		app:activate()
--- 		win:focus()
--- 	end
-
--- 	hs.alert.show(hs.inspect(target))
--- 	hs.alert.show("window created: " .. id)
--- end)
