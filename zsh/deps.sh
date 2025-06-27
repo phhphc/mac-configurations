@@ -1,16 +1,13 @@
 #!/bin/bash
 
-# zsh plugin
+# zsh theme
 brew install powerlevel10k
-brew install zsh-autosuggestions
-brew install zsh-syntax-highlighting
-brew install zsh-vi-mode
+
+# zsh utils
+brew install zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode
 
 # fuzzy finder
 brew install fzf
 
-# GNU command line
-brew install grep
-brew install coreutils
-brew install gnu-sed
-brew install findutils
+# GNU cli
+brew install grep coreutils gnu-sed findutils
