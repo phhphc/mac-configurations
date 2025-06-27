@@ -10,7 +10,12 @@ that need to reference windows by custom names rather than just titles.
 
 -- TODO: filter out closed window when restore alias
 
+---@class M
+---@field onCreated fun(win: hs.window, alias: string): nil
+---@field onDestroyed fun(win: hs.window, alias: string): nil
+---@field onRenamed fun(win: hs.window, alias: string): nil
 local M = {}
+
 
 local aliases = {}
 
@@ -31,21 +36,37 @@ function M:setAlias(win)
     ---@type string | nil, string | nil
     local btn, text = hs.dialog.textPrompt("Window Alias", "Enter an alias for this window", "", "OK", "Cancel")
     if btn == "OK" and text ~= "" then aliases[id] = text end
+    if M.onRenamed then M.onRenamed(win, M:getAlias(win)) end
 end
 
-local windowFilter = hs.window.filter.new()
+local windowFilter = hs.window.filter.new({
+    "Firefox",
+    "kitty",
+    "Cursor",
+    "IntelliJ IDEA",
+    "Obsidian",
+    "Zalo",
+    "ChatGPT"
+})
 
+---@param win hs.window
 windowFilter:subscribe(hs.window.filter.windowDestroyed, function(win)
+    if M.onDestroyed then M.onDestroyed(win, M:getAlias(win)) end
     ---@type number | nil
     local id = win:id()
     if id and aliases[id] then aliases[id] = nil end
 end)
 
+---@param win hs.window
 windowFilter:subscribe(hs.window.filter.windowCreated, function(win)
     ---@type number | nil
     local id = win:id()
-    if id and aliases[id] then aliases[id] = nil end
+    local title = win:title()
+    if id then aliases[id] = title end
+    if M.onCreated then M.onCreated(win, title) end
 end)
+
+--- TODO: subscribe event window change
 
 
 function backupAliases()

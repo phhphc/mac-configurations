@@ -246,13 +246,44 @@ end)
 -- prefixMap:add("ab", function() hs.alert.show("ab") end)
 -- prefixMap:add("c", function() hs.alert.show("c") end)
 
+-- ---@param win hs.window
+-- ---@param alias string
+-- ---@return string|nil
+-- function getShortcut(win, alias)
+-- 	---@type hs.application | nil
+-- 	local app = win:application()
+-- 	if not app then return nil end
+-- 	local app_name = app:title()
+-- 	if app_name == "" then return nil end
+-- 	if alias == "" then return nil end
+-- 	local first_char = app_name:sub(1, 1):lower()
+-- 	local second_char = app_name:sub(2, 2):lower()
+-- 	return first_char .. second_char
+-- end
 
--- local windowFilter = hs.window.filter.new({
--- 	"Firefox",
--- 	"kitty",
--- 	"Cursor",
--- 	"IntelliJ IDEA",
--- 	"Obsidian",
--- 	"Zalo",
--- 	"ChatGPT"
--- })
+-- local windowAliasV2 = require("src.lib.window_alias_v2")
+
+-- windowAliasV2.onCreated = function(win, alias)
+-- 	local shortcut = getShortcut(win, alias)
+-- 	if shortcut then
+-- 		prefixMap:add(shortcut, function()
+-- 			hs.alert.show("Launching " .. alias)
+-- 		end)
+-- 		hs.alert.show("Added shortcut: " .. shortcut)
+-- 	end
+-- 	hs.alert.show("Window created: " .. alias)
+-- end
+
+-- windowAliasV2.onDestroyed = function(win, alias)
+-- 	local shortcut = getShortcut(win, alias)
+-- 	if shortcut then
+-- 		prefixMap:remove(shortcut)
+-- 		hs.alert.show("Removed shortcut: " .. shortcut)
+-- 	end
+-- 	hs.alert.show("Window destroyed: " .. alias)
+-- end
+
+-- windowAliasV2.onRenamed = function(win, alias)
+-- 	windowAliasV2.onDestroyed(win, alias)
+-- 	windowAliasV2.onCreated(win, alias)
+-- end
