@@ -18,17 +18,16 @@ export PATH=$PATH:$HOME/bin # TODO: remove this line
 export PATH=$PATH:"$HOME/.user-config/.bin"
 
 # Go bin path
-if command -v go &> /dev/null; then 
+if command -v go &>/dev/null; then
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
 
 # config pyenv
-if command -v pyenv &> /dev/null; then 
+if command -v pyenv &>/dev/null; then
   export PYENV_ROOT="$HOME/.pyenv"
   [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
 fi
-
 
 # Added by Toolbox App
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
@@ -37,7 +36,7 @@ export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
 
 # java version manager
-if command -v jenv &> /dev/null; then 
+if command -v jenv &>/dev/null; then
   export PATH="$HOME/.jenv/bin:$PATH"
   eval "$(jenv init -)"
 fi
