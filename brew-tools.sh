@@ -20,4 +20,7 @@ brew install difftastic
 # development tool
 brew install oven-sh/bun/bun node
 brew install go
-brew install rust rust-analyzer
+
+# brew install rust rust-analyzer
+brew install rustup
+rustup default stable
