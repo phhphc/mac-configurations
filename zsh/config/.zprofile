@@ -44,6 +44,9 @@ fi
 # cargo
 [ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
+# TODO: fix cargo tool
+export PATH=$PATH:"$(brew --prefix rustup)/bin"
+
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
