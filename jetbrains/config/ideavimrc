@@ -58,6 +58,9 @@ nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fc viw<Action>(FindInPath)<Esc>
 nmap <leader>fT <Action>(ActivateTODOToolWindow)
 
+" Git version control section
+nmap <leader>gb <Action>(Git.Branches)
+
 nmap za <Action>(ExpandCollapseToggleAction)
 
 nmap <leader>db <Action>(ToggleLineBreakpoint)
