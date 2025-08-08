@@ -30,7 +30,7 @@ gbak() {
   local timestamp=$(date +"%Y.%m.%d-%H.%M")
 
   # Construct backup branch name
-  local backup_branch="${current_branch}.d/bak/${timestamp}-${sanitized_comment}"
+  local backup_branch="backup/${current_branch}/${timestamp}-${sanitized_comment}"
 
   # Create the backup branch
   git branch "$backup_branch"
