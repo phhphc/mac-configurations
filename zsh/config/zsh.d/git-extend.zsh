@@ -23,20 +23,17 @@ gbak() {
     return 1
   fi
 
-  # Sanitize comment: replace non-alphanumeric with dash
-  local sanitized_comment=$(echo "$raw_comment" | sed 's/[^a-zA-Z0-9]/-/g')
-
   # Generate timestamp
-  local timestamp=$(date +"%Y.%m.%d-%H.%M")
+  local timestamp=$(date +"%Y.%m.%d-%H.%M.%S")
 
   # Construct backup branch name
-  local backup_branch="backup/${current_branch}/${timestamp}-${sanitized_comment}"
+  local backup_tag="backup/${current_branch}/${timestamp}"
 
   # Create the backup branch
-  git branch "$backup_branch"
+  git tag -a "$backup_tag" -m "$raw_comment"
 
   if [[ $? -eq 0 ]]; then
-    echo "Backup branch created: $backup_branch"
+    echo "Backup tag created: $backup_tag"
   else
     echo "Error: Failed to create backup branch."
     return 1
