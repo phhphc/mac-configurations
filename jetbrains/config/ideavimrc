@@ -108,3 +108,21 @@ set incsearch
 
 set ideajoin
 set clipboard^=ideaput
+
+set ideamarks
+
+" ideavim config for remote developent
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+
+
+" Git version control section
+nmap <leader>gb <Action>(Git.Branches)
+nmap <leader>gs <Action>(ChangesView.AddUnversioned)
+" nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
+
+nmap ]g <Action>(VcsShowNextChangeMarker)
+nmap [g <Action>(VcsShowPrevChangeMarker)
+
+imap <C-C> <Action>(CallInlineCompletionAction)
+
