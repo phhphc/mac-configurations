@@ -34,7 +34,7 @@ nmap <C-l> <C-w>l
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 
-nmap <leader>lf <Action>(ReformatCode)
+nmap <leader>lf <Action>(ReformatCode)<Action>(OptimizeImports)
 nmap <leader>lr <Action>(RenameElement)
 nmap <leader>la <Action>(ShowIntentionActions)
 
