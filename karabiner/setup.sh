@@ -1,3 +1,5 @@
 #!/bin/bash
 
-cp ./config/karabiner.json "$HOME"/.config/karabiner/karabiner.json
+. ../required.sh
+
+ln -s "$CONFIG_DIR"/karabiner/config ~/.config/karabiner
