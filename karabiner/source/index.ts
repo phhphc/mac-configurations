@@ -31,11 +31,21 @@ writeToProfile("Default", [
                 .to("right_control", undefined, { lazy: true })
                 .toIfAlone("backslash"),
 
-            withModifier("⌘⌥⌃⇧")({
+            withModifier(
+                "⌘⌥⌃⇧",
+                "any",
+            )({
                 h: toKey("left_arrow"),
                 l: toKey("right_arrow"),
                 k: toKey("up_arrow"),
                 j: toKey("down_arrow"),
+
+                "[": toKey("home"),
+                "]": toKey("end"),
+                ".": toKey("page_down"),
+                ",": toKey("page_up"),
+
+                u: toKey("caps_lock"),
 
                 t: toApp("Kitty"),
 

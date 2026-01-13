@@ -2320,6 +2320,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2346,6 +2349,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2372,6 +2378,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2398,6 +2407,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2424,6 +2436,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2450,6 +2465,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2476,6 +2494,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2502,6 +2523,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2528,6 +2552,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2554,6 +2581,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2580,6 +2610,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2606,6 +2639,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2632,6 +2668,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2658,12 +2697,160 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
                 "to": [
                   {
                     "key_code": "down_arrow"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "open_bracket",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "option",
+                      "control",
+                      "shift"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "home"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "close_bracket",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "option",
+                      "control",
+                      "shift"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "end"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "period",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "option",
+                      "control",
+                      "shift"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "page_down"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "option",
+                      "control",
+                      "shift"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "page_up"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "option",
+                      "control",
+                      "shift"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "caps_lock"
                   }
                 ],
                 "conditions": [
@@ -2684,6 +2871,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2710,6 +2900,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2736,6 +2929,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2762,6 +2958,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2791,6 +2990,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2821,6 +3023,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2851,6 +3056,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -2879,6 +3087,9 @@
                       "option",
                       "control",
                       "shift"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
