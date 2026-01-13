@@ -62,10 +62,8 @@ writeToProfile("Default", [
             }),
         ]),
 
-    hyperLayer("o", "hyper-o")
-        .leaderMode({
-            escape: ["caps_lock", "return_or_enter"],
-        })
+    hyperLayer("o", "Open App")
+        .leaderMode({ escape: ["caps_lock", "return_or_enter"] })
         .notification()
         .manipulators({
             o: toApp("Obsidian"),
@@ -75,7 +73,7 @@ writeToProfile("Default", [
             f: toApp("Firefox"),
         }),
 
-    hyperLayer("w", "hyper-w")
+    hyperLayer("w", "Manage Window")
         .leaderMode({ sticky: true, escape: ["caps_lock", "return_or_enter"] })
         .notification()
         .manipulators({

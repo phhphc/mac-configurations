@@ -2900,7 +2900,7 @@
             ]
           },
           {
-            "description": "Layer - hyper-o",
+            "description": "Layer - Open App",
             "manipulators": [
               {
                 "type": "basic",
@@ -2918,7 +2918,7 @@
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper-o",
+                      "name": "Open App",
                       "value": 1
                     }
                   },
@@ -2930,15 +2930,15 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-o",
-                      "text": "Layer - hyper-o"
+                      "id": "layer-Open App",
+                      "text": "Layer - Open App"
                     }
                   }
                 ],
                 "conditions": [
                   {
                     "type": "variable_unless",
-                    "name": "hyper-o",
+                    "name": "Open App",
                     "value": 1
                   },
                   {
@@ -2964,7 +2964,7 @@
                   },
                   {
                     "set_variable": {
-                      "name": "hyper-o",
+                      "name": "Open App",
                       "value": 0
                     }
                   },
@@ -2976,7 +2976,7 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-o",
+                      "id": "layer-Open App",
                       "text": ""
                     }
                   }
@@ -2984,7 +2984,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-o",
+                    "name": "Open App",
                     "value": 1
                   }
                 ]
@@ -3005,7 +3005,7 @@
                   },
                   {
                     "set_variable": {
-                      "name": "hyper-o",
+                      "name": "Open App",
                       "value": 0
                     }
                   },
@@ -3017,7 +3017,7 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-o",
+                      "id": "layer-Open App",
                       "text": ""
                     }
                   }
@@ -3025,7 +3025,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-o",
+                    "name": "Open App",
                     "value": 1
                   }
                 ]
@@ -3046,7 +3046,7 @@
                   },
                   {
                     "set_variable": {
-                      "name": "hyper-o",
+                      "name": "Open App",
                       "value": 0
                     }
                   },
@@ -3058,7 +3058,7 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-o",
+                      "id": "layer-Open App",
                       "text": ""
                     }
                   }
@@ -3066,7 +3066,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-o",
+                    "name": "Open App",
                     "value": 1
                   }
                 ]
@@ -3087,7 +3087,7 @@
                   },
                   {
                     "set_variable": {
-                      "name": "hyper-o",
+                      "name": "Open App",
                       "value": 0
                     }
                   },
@@ -3099,7 +3099,7 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-o",
+                      "id": "layer-Open App",
                       "text": ""
                     }
                   }
@@ -3107,7 +3107,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-o",
+                    "name": "Open App",
                     "value": 1
                   }
                 ]
@@ -3125,14 +3125,14 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-o",
+                    "name": "Open App",
                     "value": 1
                   }
                 ],
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper-o",
+                      "name": "Open App",
                       "value": 0
                     }
                   },
@@ -3144,7 +3144,7 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-o",
+                      "id": "layer-Open App",
                       "text": ""
                     }
                   }
@@ -3163,14 +3163,14 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-o",
+                    "name": "Open App",
                     "value": 1
                   }
                 ],
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper-o",
+                      "name": "Open App",
                       "value": 0
                     }
                   },
@@ -3182,7 +3182,7 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-o",
+                      "id": "layer-Open App",
                       "text": ""
                     }
                   }
@@ -3191,7 +3191,7 @@
             ]
           },
           {
-            "description": "Layer - hyper-w",
+            "description": "Layer - Manage Window",
             "manipulators": [
               {
                 "type": "basic",
@@ -3209,7 +3209,7 @@
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper-w",
+                      "name": "Manage Window",
                       "value": 1
                     }
                   },
@@ -3221,15 +3221,15 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-w",
-                      "text": "Layer - hyper-w"
+                      "id": "layer-Manage Window",
+                      "text": "Layer - Manage Window"
                     }
                   }
                 ],
                 "conditions": [
                   {
                     "type": "variable_unless",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   },
                   {
@@ -3257,7 +3257,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3284,7 +3284,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3311,7 +3311,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3338,7 +3338,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3365,7 +3365,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3391,7 +3391,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3418,7 +3418,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3444,7 +3444,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3471,7 +3471,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3497,7 +3497,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3523,7 +3523,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ]
@@ -3541,14 +3541,14 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ],
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper-w",
+                      "name": "Manage Window",
                       "value": 0
                     }
                   },
@@ -3560,7 +3560,7 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-w",
+                      "id": "layer-Manage Window",
                       "text": ""
                     }
                   }
@@ -3579,14 +3579,14 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper-w",
+                    "name": "Manage Window",
                     "value": 1
                   }
                 ],
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper-w",
+                      "name": "Manage Window",
                       "value": 0
                     }
                   },
@@ -3598,7 +3598,7 @@
                   },
                   {
                     "set_notification_message": {
-                      "id": "layer-hyper-w",
+                      "id": "layer-Manage Window",
                       "text": ""
                     }
                   }
