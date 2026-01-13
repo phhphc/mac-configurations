@@ -1,0 +1,19 @@
+{
+    "name": "config-karabiner",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "prettier": "3.7.4"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "dependencies": {
+        "karabiner.ts": "^1.36.0"
+    }
+}
