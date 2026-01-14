@@ -1,6 +1,7 @@
 import {
     hyperLayer,
     ifInputSource,
+    ifApp,
     ifVar,
     layer,
     map,
@@ -18,6 +19,21 @@ import {
 } from "karabiner.ts";
 
 writeToProfile("Default", [
+    rule("Work PC config")
+        .condition(ifVar("__layer", 0))
+        .manipulators([
+            map("left_command", undefined, "any")
+                .description(
+                    "map command -> control for window virtual machine",
+                )
+                .condition(
+                    ifApp({
+                        bundle_identifiers: ["company.thebrowser.Browser"],
+                    }),
+                )
+                .to("left_control"),
+        ]),
+
     rule("Non layer keymap")
         .condition(ifVar("__layer", 0))
         .manipulators([
@@ -33,6 +49,10 @@ writeToProfile("Default", [
                 .toHyper({ lazy: true })
                 .toIfAlone("return_or_enter"),
 
+            map("escape", undefined, "any").to("caps_lock"),
+
+            map("right_command", null, "any").to("right_control"),
+
             map("backslash", null, "any")
                 .to("right_control", undefined, { lazy: true })
                 .toIfAlone("backslash"),
@@ -41,7 +61,7 @@ writeToProfile("Default", [
                 "⌘⌥⌃⇧",
                 "any",
             )({
-                // <⌘⌥⌃⇧"
+                // <⌘⌥⌃⇧
 
                 h: toKey("left_arrow"),
                 l: toKey("right_arrow"),
@@ -90,6 +110,10 @@ writeToProfile("Default", [
             j: toApp("IntelliJ Idea"),
             w: toApp("Webstorm"),
             f: toApp("Firefox"),
+
+            z: toApp("Zalo"),
+            m: toApp("Mail"),
+            p: toApp("Postman"),
         }),
 
     hyperLayer("w", "Manage Window")
