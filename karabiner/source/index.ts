@@ -1,5 +1,6 @@
 import {
     hyperLayer,
+    ifInputSource,
     ifVar,
     layer,
     map,
@@ -20,9 +21,14 @@ writeToProfile("Default", [
     rule("Non layer keymap")
         .condition(ifVar("__layer", 0))
         .manipulators([
+            map("caps_lock")
+                .condition(ifInputSource({ language: "en" }).unless())
+                .toInputSource({ language: "en" }),
             map("caps_lock", undefined, "any")
+                .condition(ifInputSource({ language: "en" }))
                 .toHyper({ lazy: true })
                 .toIfAlone("escape"),
+
             map("return_or_enter", undefined, "any")
                 .toHyper({ lazy: true })
                 .toIfAlone("return_or_enter"),
@@ -35,10 +41,15 @@ writeToProfile("Default", [
                 "⌘⌥⌃⇧",
                 "any",
             )({
+                // <⌘⌥⌃⇧"
+
                 h: toKey("left_arrow"),
                 l: toKey("right_arrow"),
                 k: toKey("up_arrow"),
                 j: toKey("down_arrow"),
+
+                a: toKey("f14", "<⌘"), // RayCast ChatAI
+                q: toKey("f14", "<⌥"), // RayCast Quick Chat
 
                 "[": toKey("home"),
                 "]": toKey("end"),
@@ -66,9 +77,7 @@ writeToProfile("Default", [
 
                 "/": toKey("q", "⌘⌃"), // lock screen
 
-                i: toKey("spacebar", "⌥⌃"),
                 v: toInputSource({ language: "vi" }),
-                e: toInputSource({ language: "en" }),
             }),
         ]),
 

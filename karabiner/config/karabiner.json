@@ -2216,6 +2216,34 @@
               {
                 "type": "basic",
                 "from": {
+                  "key_code": "caps_lock"
+                },
+                "conditions": [
+                  {
+                    "type": "input_source_unless",
+                    "input_sources": [
+                      {
+                        "language": "en"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ],
+                "to": [
+                  {
+                    "select_input_source": {
+                      "language": "en"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
                   "key_code": "caps_lock",
                   "modifiers": {
                     "optional": [
@@ -2223,6 +2251,21 @@
                     ]
                   }
                 },
+                "conditions": [
+                  {
+                    "type": "input_source_if",
+                    "input_sources": [
+                      {
+                        "language": "en"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ],
                 "to": [
                   {
                     "lazy": true,
@@ -2237,13 +2280,6 @@
                 "to_if_alone": [
                   {
                     "key_code": "escape"
-                  }
-                ],
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "__layer",
-                    "value": 0
                   }
                 ]
               },
@@ -2719,6 +2755,70 @@
               {
                 "type": "basic",
                 "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "option",
+                      "control",
+                      "shift"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f14",
+                    "modifiers": [
+                      "left_command"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "q",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "option",
+                      "control",
+                      "shift"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f14",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
                   "key_code": "open_bracket",
                   "modifiers": {
                     "mandatory": [
@@ -3016,39 +3116,6 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "i",
-                  "modifiers": {
-                    "mandatory": [
-                      "command",
-                      "option",
-                      "control",
-                      "shift"
-                    ],
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "spacebar",
-                    "modifiers": [
-                      "option",
-                      "control"
-                    ]
-                  }
-                ],
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "__layer",
-                    "value": 0
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
                   "key_code": "v",
                   "modifiers": {
                     "mandatory": [
@@ -3066,37 +3133,6 @@
                   {
                     "select_input_source": {
                       "language": "vi"
-                    }
-                  }
-                ],
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "__layer",
-                    "value": 0
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "e",
-                  "modifiers": {
-                    "mandatory": [
-                      "command",
-                      "option",
-                      "control",
-                      "shift"
-                    ],
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "select_input_source": {
-                      "language": "en"
                     }
                   }
                 ],
