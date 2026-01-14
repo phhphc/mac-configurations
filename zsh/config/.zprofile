@@ -41,6 +41,13 @@ if command -v jenv &>/dev/null; then
   eval "$(jenv init -)"
 fi
 
+# nodejs version manager
+if command -v nodenv &>/dev/null; then
+  eval "$(nodenv init - --no-rehash zsh)"
+fi
+
+# node
+
 # cargo
 [ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
