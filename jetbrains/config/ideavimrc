@@ -71,6 +71,11 @@ nmap <leader>a <Action>(Annotate)
 vmap <leader>je <Action>(Console.Jdbc.Execute)
 nmap <leader>je <Action>(Console.Jdbc.Execute)
 
+" Multi cursor
+nmap <leader>ij <Action>(EditorCloneCaretBelow)
+nmap <leader>ik <Action>(EditorCloneCaretAbove)
+
+
 inoremap jj <Esc>
 inoremap jk <Esc>
 noremap H Hzz
@@ -96,6 +101,7 @@ let g:NERDTreeMapActivateNode = "l"
 let g:NERDTreeMapCloseDir = "h"
 Plug 'preservim/nerdtree'
 nmap <leader>e :NERDTreeFocus<CR>
+nmap <leader>E :NERDTreeFind<CR>
 
 
 Plug 'machakann/vim-highlightedyank'
