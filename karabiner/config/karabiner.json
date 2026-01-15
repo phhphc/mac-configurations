@@ -92,9 +92,14 @@
                 ],
                 "to": [
                   {
-                    "select_input_source": {
-                      "language": "en"
-                    }
+                    "key_code": "spacebar",
+                    "modifiers": [
+                      "left_option",
+                      "left_control"
+                    ]
+                  },
+                  {
+                    "key_code": "escape"
                   }
                 ]
               },
@@ -108,6 +113,21 @@
                     ]
                   }
                 },
+                "conditions": [
+                  {
+                    "type": "input_source_if",
+                    "input_sources": [
+                      {
+                        "language": "en"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ],
                 "to": [
                   {
                     "lazy": true,
@@ -119,11 +139,134 @@
                     ]
                   }
                 ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
                 "conditions": [
+                  {
+                    "type": "input_source_unless",
+                    "input_sources": [
+                      {
+                        "language": "en"
+                      }
+                    ]
+                  },
                   {
                     "type": "variable_if",
                     "name": "__layer",
                     "value": 0
+                  }
+                ],
+                "to": [
+                  {
+                    "lazy": true,
+                    "key_code": "left_command",
+                    "modifiers": [
+                      "option",
+                      "control",
+                      "shift"
+                    ]
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": [
+                      "left_option",
+                      "left_control"
+                    ]
+                  },
+                  {
+                    "key_code": "escape"
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "v",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "option",
+                      "control",
+                      "shift"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "input_source_unless",
+                    "input_sources": [
+                      {
+                        "language": "vi"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": [
+                      "left_option",
+                      "left_control"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "option",
+                      "control",
+                      "shift"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "input_source_unless",
+                    "input_sources": [
+                      {
+                        "language": "en"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": [
+                      "left_option",
+                      "left_control"
+                    ]
                   }
                 ]
               },
@@ -964,37 +1107,6 @@
                       "command",
                       "control"
                     ]
-                  }
-                ],
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "__layer",
-                    "value": 0
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "v",
-                  "modifiers": {
-                    "mandatory": [
-                      "command",
-                      "option",
-                      "control",
-                      "shift"
-                    ],
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "select_input_source": {
-                      "language": "vi"
-                    }
                   }
                 ],
                 "conditions": [

@@ -6,7 +6,6 @@ import {
     map,
     rule,
     toApp,
-    toInputSource,
     toKey,
     withModifier,
     writeToProfile,
@@ -28,6 +27,13 @@ writeToProfile("Default", [
                 .to("left_control"),
         ]),
 
+    /*
+     * Use MacOS input source switch shortcut instead of select_input_source api
+     * bacause of an unfixed error
+     * https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to/select-input-source/
+     *
+     * Temporary fix by using toKey("spacebar", "<⌥⌃")
+     */
     rule("Non layer keymap")
         .condition(ifVar("__layer", 0))
         .manipulators([
@@ -36,10 +42,23 @@ writeToProfile("Default", [
                 .to("escape"),
             map(";")
                 .condition(ifInputSource({ language: "en" }).unless())
-                .toInputSource({ language: "en" }),
+                .to([toKey("spacebar", "<⌥⌃"), toKey("escape")]),
 
-            map("caps_lock", undefined, "any").toHyper({ lazy: true }),
-            // .toIfAlone("escape") // Note: use / instead
+            map("caps_lock", undefined, "any")
+                .condition(ifInputSource({ language: "en" }))
+                .toHyper({ lazy: true })
+                .toIfAlone("escape"),
+            map("caps_lock", undefined, "any")
+                .condition(ifInputSource({ language: "en" }).unless())
+                .toHyper({ lazy: true })
+                .toIfAlone([toKey("spacebar", "<⌥⌃"), toKey("escape")]),
+
+            map("v", "⌘⌥⌃⇧")
+                .condition(ifInputSource({ language: "vi" }).unless())
+                .to("spacebar", "<⌥⌃"),
+            map("e", "⌘⌥⌃⇧")
+                .condition(ifInputSource({ language: "en" }).unless())
+                .to("spacebar", "<⌥⌃"),
 
             map("return_or_enter", undefined, "any")
                 .toHyper({ lazy: true })
@@ -93,8 +112,6 @@ writeToProfile("Default", [
 
                 c: toKey("f20", "⇧"), // Clipboard History
                 "`": toKey("q", "⌘⌃"), // Lock Screen
-
-                v: toInputSource({ language: "vi" }),
             }),
         ]),
 
