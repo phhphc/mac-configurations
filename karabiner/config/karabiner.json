@@ -47,7 +47,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "slash"
+                  "key_code": "semicolon"
                 },
                 "conditions": [
                   {
@@ -73,7 +73,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "slash"
+                  "key_code": "semicolon"
                 },
                 "conditions": [
                   {
@@ -796,7 +796,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "slash",
+                  "key_code": "semicolon",
                   "modifiers": {
                     "mandatory": [
                       "command",
@@ -811,7 +811,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "slash"
+                    "key_code": "semicolon"
                   }
                 ],
                 "conditions": [
