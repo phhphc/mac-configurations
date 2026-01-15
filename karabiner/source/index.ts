@@ -31,15 +31,15 @@ writeToProfile("Default", [
     rule("Non layer keymap")
         .condition(ifVar("__layer", 0))
         .manipulators([
-            map(";").to("escape"),
-
-            map("caps_lock")
+            map("/")
+                .condition(ifInputSource({ language: "en" }))
+                .to("escape"),
+            map("/")
                 .condition(ifInputSource({ language: "en" }).unless())
                 .toInputSource({ language: "en" }),
-            map("caps_lock", undefined, "any")
-                .condition(ifInputSource({ language: "en" }))
-                .toHyper({ lazy: true })
-                .toIfAlone("escape"),
+
+            map("caps_lock", undefined, "any").toHyper({ lazy: true }),
+            // .toIfAlone("escape") // Note: use / instead
 
             map("return_or_enter", undefined, "any")
                 .toHyper({ lazy: true })
@@ -58,8 +58,6 @@ writeToProfile("Default", [
                 "⌘⌥⌃⇧",
                 "any",
             )({
-                // <⌘⌥⌃⇧
-
                 h: toKey("left_arrow"),
                 l: toKey("right_arrow"),
                 k: toKey("up_arrow"),
@@ -76,7 +74,7 @@ writeToProfile("Default", [
                 // Note: Use esc instead
                 // u: toKey("caps_lock"),
 
-                ";": toKey(";"),
+                "/": toKey("/"),
 
                 t: toApp("Kitty"),
 
@@ -94,8 +92,7 @@ writeToProfile("Default", [
                 "=": toKey("f12"),
 
                 c: toKey("f20", "⇧"), // Clipboard History
-
-                "/": toKey("q", "⌘⌃"), // lock screen
+                "`": toKey("q", "⌘⌃"), // Lock Screen
 
                 v: toInputSource({ language: "vi" }),
             }),

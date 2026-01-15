@@ -47,25 +47,33 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "semicolon"
+                  "key_code": "slash"
                 },
-                "to": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
                 "conditions": [
+                  {
+                    "type": "input_source_if",
+                    "input_sources": [
+                      {
+                        "language": "en"
+                      }
+                    ]
+                  },
                   {
                     "type": "variable_if",
                     "name": "__layer",
                     "value": 0
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "escape"
                   }
                 ]
               },
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "caps_lock"
+                  "key_code": "slash"
                 },
                 "conditions": [
                   {
@@ -100,21 +108,6 @@
                     ]
                   }
                 },
-                "conditions": [
-                  {
-                    "type": "input_source_if",
-                    "input_sources": [
-                      {
-                        "language": "en"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "__layer",
-                    "value": 0
-                  }
-                ],
                 "to": [
                   {
                     "lazy": true,
@@ -126,9 +119,11 @@
                     ]
                   }
                 ],
-                "to_if_alone": [
+                "conditions": [
                   {
-                    "key_code": "escape"
+                    "type": "variable_if",
+                    "name": "__layer",
+                    "value": 0
                   }
                 ]
               },
@@ -801,7 +796,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "slash",
                   "modifiers": {
                     "mandatory": [
                       "command",
@@ -816,7 +811,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "semicolon"
+                    "key_code": "slash"
                   }
                 ],
                 "conditions": [
@@ -949,7 +944,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "slash",
+                  "key_code": "grave_accent_and_tilde",
                   "modifiers": {
                     "mandatory": [
                       "command",
