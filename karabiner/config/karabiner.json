@@ -47,65 +47,6 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "semicolon"
-                },
-                "conditions": [
-                  {
-                    "type": "input_source_if",
-                    "input_sources": [
-                      {
-                        "language": "en"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "__layer",
-                    "value": 0
-                  }
-                ],
-                "to": [
-                  {
-                    "key_code": "escape"
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "semicolon"
-                },
-                "conditions": [
-                  {
-                    "type": "input_source_unless",
-                    "input_sources": [
-                      {
-                        "language": "en"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "__layer",
-                    "value": 0
-                  }
-                ],
-                "to": [
-                  {
-                    "key_code": "spacebar",
-                    "modifiers": [
-                      "left_option",
-                      "left_control"
-                    ]
-                  },
-                  {
-                    "key_code": "escape"
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
                   "key_code": "caps_lock",
                   "modifiers": {
                     "optional": [
@@ -926,35 +867,6 @@
                 "to": [
                   {
                     "key_code": "page_up"
-                  }
-                ],
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "__layer",
-                    "value": 0
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "semicolon",
-                  "modifiers": {
-                    "mandatory": [
-                      "command",
-                      "option",
-                      "control",
-                      "shift"
-                    ],
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "semicolon"
                   }
                 ],
                 "conditions": [
