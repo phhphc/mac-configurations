@@ -1,19 +1,13 @@
 import {
     hyperLayer,
-    ifInputSource,
     ifApp,
+    ifInputSource,
     ifVar,
-    layer,
     map,
     rule,
-    to$,
     toApp,
-    toConsumerKey,
-    toGenericDesktop,
     toInputSource,
     toKey,
-    toSleepSystem,
-    withCondition,
     withModifier,
     writeToProfile,
 } from "karabiner.ts";
@@ -53,9 +47,10 @@ writeToProfile("Default", [
 
             map("right_command", null, "any").to("right_control"),
 
-            map("backslash", null, "any")
-                .to("right_control", undefined, { lazy: true })
-                .toIfAlone("backslash"),
+            // Note: use right_command instead
+            // map("backslash", null, "any")
+            //     .to("right_control", undefined, { lazy: true })
+            //     .toIfAlone("backslash"),
 
             withModifier(
                 "⌘⌥⌃⇧",
@@ -76,7 +71,8 @@ writeToProfile("Default", [
                 ".": toKey("page_down"),
                 ",": toKey("page_up"),
 
-                u: toKey("caps_lock"),
+                // Note: Use esc instead
+                // u: toKey("caps_lock"),
 
                 t: toApp("Kitty"),
 
@@ -93,7 +89,7 @@ writeToProfile("Default", [
                 "-": toKey("f11"),
                 "=": toKey("f12"),
 
-                c: toKey("f20", "⇧"),
+                c: toKey("f20", "⇧"), // Clipboard History
 
                 "/": toKey("q", "⌘⌃"), // lock screen
 
