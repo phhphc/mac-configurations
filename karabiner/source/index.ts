@@ -31,6 +31,8 @@ writeToProfile("Default", [
     rule("Non layer keymap")
         .condition(ifVar("__layer", 0))
         .manipulators([
+            map(";").to("escape"),
+
             map("caps_lock")
                 .condition(ifInputSource({ language: "en" }).unless())
                 .toInputSource({ language: "en" }),
@@ -73,6 +75,8 @@ writeToProfile("Default", [
 
                 // Note: Use esc instead
                 // u: toKey("caps_lock"),
+
+                ";": toKey(";"),
 
                 t: toApp("Kitty"),
 
