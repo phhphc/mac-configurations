@@ -42,6 +42,92 @@
             ]
           },
           {
+            "description": "Vietnamese VimMode",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "j"
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "vi_kj",
+                    "value": 1
+                  },
+                  {
+                    "type": "input_source_unless",
+                    "input_sources": [
+                      {
+                        "language": "en"
+                      }
+                    ]
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "j"
+                  },
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": [
+                      "left_option",
+                      "left_control"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "k"
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "vi_kj",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "key_code": "k"
+                  }
+                ],
+                "to_delayed_action": {
+                  "to_if_invoked": [
+                    {
+                      "set_variable": {
+                        "name": "vi_kj",
+                        "value": 0
+                      }
+                    }
+                  ],
+                  "to_if_canceled": [
+                    {
+                      "set_variable": {
+                        "name": "vi_kj",
+                        "value": 0
+                      }
+                    }
+                  ]
+                },
+                "parameters": {
+                  "basic.to_delayed_action_delay_milliseconds": 1000
+                },
+                "conditions": [
+                  {
+                    "type": "input_source_unless",
+                    "input_sources": [
+                      {
+                        "language": "en"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "description": "Non layer keymap",
             "manipulators": [
               {

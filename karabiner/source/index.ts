@@ -1,12 +1,16 @@
 import {
+    duoLayer,
     hyperLayer,
     ifApp,
     ifInputSource,
     ifVar,
     map,
+    mapSimultaneous,
     rule,
     toApp,
     toKey,
+    toNone,
+    toSetVar,
     withModifier,
     writeToProfile,
 } from "karabiner.ts";
@@ -27,6 +31,25 @@ writeToProfile("Default", [
                 .to("left_control"),
         ]),
 
+    rule("Vietnamese VimMode")
+        .condition(ifInputSource({ language: "en" }).unless())
+        .manipulators([
+            /*
+             * While on Vietnamese Input Source
+             * Press kj in vim mode to escape insert mode
+             * And also switch to English Input Source
+             */
+            map("j")
+                .condition(ifVar("vi_kj", 1))
+                .to([toKey("j"), toKey("spacebar", "<⌥⌃")]),
+            map("k")
+                .to([toSetVar("vi_kj", 1), toKey("k")])
+                .toDelayedAction(toSetVar("vi_kj", 0), toSetVar("vi_kj", 0))
+                .parameters({
+                    "basic.to_delayed_action_delay_milliseconds": 1000,
+                }),
+        ]),
+
     /*
      * Use MacOS input source switch shortcut instead of select_input_source api
      * bacause of an unfixed error
@@ -37,7 +60,6 @@ writeToProfile("Default", [
     rule("Non layer keymap")
         .condition(ifVar("__layer", 0))
         .manipulators([
-
             map("caps_lock", undefined, "any")
                 .condition(ifInputSource({ language: "en" }))
                 .toHyper({ lazy: true })
