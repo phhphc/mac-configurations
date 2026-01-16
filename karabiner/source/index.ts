@@ -42,6 +42,13 @@ writeToProfile("Default", [
              * - jk: nawngjk -> nặngk
              * - kj: nawngkj -> năng<escape>
              *
+             * Using kj instead of using escape directly is because
+             * in many apps that do not support vim mode, accidentally press escape
+             * cause:
+             * - all inserted texts being deleted
+             * - app closure
+             * These all are unexpected behaviors.
+             *
              * One downside is that the letter k is more common than the letter j
              * and vim mode delays the insert of the first character of the keymap.
              * This makes the delay more explicit when using kj.
