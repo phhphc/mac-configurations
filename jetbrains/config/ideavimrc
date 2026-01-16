@@ -76,8 +76,7 @@ nmap <leader>ij <Action>(EditorCloneCaretBelow)
 nmap <leader>ik <Action>(EditorCloneCaretAbove)
 
 
-inoremap jj <Esc>
-inoremap jk <Esc>
+inoremap kj <Esc>
 noremap H Hzz
 noremap L Lzz
 
