@@ -1,15 +1,12 @@
 import {
-    duoLayer,
     hyperLayer,
     ifApp,
     ifInputSource,
     ifVar,
     map,
-    mapSimultaneous,
     rule,
     toApp,
     toKey,
-    toNone,
     toSetVar,
     withModifier,
     writeToProfile,
@@ -31,13 +28,27 @@ writeToProfile("Default", [
                 .to("left_control"),
         ]),
 
-    rule("Vietnamese VimMode")
+    rule("Switch to English while escape Vim Insert Mode")
         .condition(ifInputSource({ language: "en" }).unless())
         .manipulators([
             /*
              * While on Vietnamese Input Source
              * Press kj in vim mode to escape insert mode
              * And also switch to English Input Source
+             *
+             * Choosing kj instead of the most common jk is because
+             * it is more suitable for Vietnamese
+             * Example:
+             * - jk: nawngjk -> nặngk
+             * - kj: nawngkj -> năng<escape>
+             *
+             * One downside is that the letter k is more common than the letter j
+             * and vim mode delays the insert of the first character of the keymap.
+             * This makes the delay more explicit when using kj.
+             *
+             * This config only switches input source, the kj to escape in insert
+             * should be mapped in vim.
+             *
              */
             map("j")
                 .condition(ifVar("vi_kj", 1))
