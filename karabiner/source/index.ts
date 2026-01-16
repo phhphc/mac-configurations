@@ -109,8 +109,8 @@ writeToProfile("Default", [
                 k: toKey("up_arrow"),
                 j: toKey("down_arrow"),
 
-                a: toKey("f14", "<⌘"), // RayCast ChatAI
-                q: toKey("f14", "<⌥"), // RayCast Quick Chat
+                // a: toKey("f14", "<⌘"), // RayCast ChatAI
+                // q: toKey("f14", "<⌘⌥⌃"), // RayCast Quick Chat
 
                 "[": toKey("home"),
                 "]": toKey("end"),
@@ -171,5 +171,18 @@ writeToProfile("Default", [
             j: toKey("f13", "<⇧"), // bottom half
             k: toKey("f13", "<⌃"), // top half
             // m: toKey("f13", "<⌘⌥⌃⇧"), // almost maximize
+        }),
+
+    hyperLayer("a", "Use AI")
+        .leaderMode({ escape: ["caps_lock", "return_or_enter"] })
+        .notification()
+        .manipulators({
+            a: toKey("f14", "<⌘⌥⌃"), // Last used AI chat
+
+            s: toKey("f14", "<⌘"), // Searching AI
+
+            w: toKey("f14", "<⌥"), // Writing AI
+
+            c: toKey("f14", "<⌃"), // Coding AI
         }),
 ]);
