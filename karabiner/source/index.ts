@@ -13,10 +13,6 @@ import {
     writeToProfile,
 } from "karabiner.ts";
 
-const toUrl = (url: string, options?: { bg?: boolean }) => {
-    return to$(`open ${options?.bg ? "-g" : ""} "${url}"`);
-};
-
 writeToProfile("Default", [
     rule("Work PC config")
         .condition(ifVar("__layer", 0))
@@ -169,20 +165,20 @@ writeToProfile("Default", [
         .leaderMode({ sticky: true, escape: ["caps_lock", "return_or_enter"] })
         .notification()
         .manipulators({
-            h: toUrl("raycast://extensions/raycast/window-management/left-half", { bg: true }),
-            j: toUrl("raycast://extensions/raycast/window-management/bottom-half", { bg: true }),
-            k: toUrl("raycast://extensions/raycast/window-management/top-half", { bg: true }),
-            l: toUrl("raycast://extensions/raycast/window-management/right-half", { bg: true }),
+            h: to$(`open -g "raycast://extensions/raycast/window-management/left-half"`),
+            j: to$(`open -g "raycast://extensions/raycast/window-management/bottom-half"`),
+            k: to$(`open -g "raycast://extensions/raycast/window-management/top-half"`),
+            l: to$(`open -g "raycast://extensions/raycast/window-management/right-half"`),
 
-            r: toUrl("raycast://extensions/raycast/window-management/reasonable-size", { bg: true }),
-            a: toUrl("raycast://extensions/raycast/window-management/almost-maximize", { bg: true }),
-            m: toUrl("raycast://extensions/raycast/window-management/maximize", { bg: true }),
-            f: toUrl("raycast://extensions/raycast/window-management/toggle-fullscreen", { bg: true }),
+            r: to$(`open -g "raycast://extensions/raycast/window-management/reasonable-size"`),
+            a: to$(`open -g "raycast://extensions/raycast/window-management/almost-maximize"`),
+            m: to$(`open -g "raycast://extensions/raycast/window-management/maximize"`),
+            f: to$(`open -g "raycast://extensions/raycast/window-management/toggle-fullscreen"`),
 
-            c: toUrl("raycast://extensions/raycast/window-management/center", { bg: true }),
+            c: to$(`open -g "raycast://extensions/raycast/window-management/center"`),
 
-            n: toUrl("raycast://extensions/raycast/window-management/next-display", { bg: true }),
-            p: toUrl("raycast://extensions/raycast/window-management/previous-display", { bg: true }),
+            n: to$(`open -g "raycast://extensions/raycast/window-management/next-display"`),
+            p: to$(`open -g "raycast://extensions/raycast/window-management/previous-display"`),
         }),
 
     hyperLayer("a", "Use AI")
