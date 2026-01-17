@@ -22,9 +22,7 @@ writeToProfile("Default", [
         .condition(ifVar("__layer", 0))
         .manipulators([
             map("left_command", undefined, "any")
-                .description(
-                    "map command -> control for window virtual machine",
-                )
+                .description("map command -> control for window virtual machine")
                 .condition(
                     ifApp({
                         bundle_identifiers: ["company.thebrowser.Browser"],
@@ -99,9 +97,7 @@ writeToProfile("Default", [
                 .condition(ifInputSource({ language: "en" }).unless())
                 .to("spacebar", "<⌥⌃"),
 
-            map("return_or_enter", undefined, "any")
-                .toHyper({ lazy: true })
-                .toIfAlone("return_or_enter"),
+            map("return_or_enter", undefined, "any").toHyper({ lazy: true }).toIfAlone("return_or_enter"),
 
             map("escape", undefined, "any").to("caps_lock"),
 
@@ -173,52 +169,20 @@ writeToProfile("Default", [
         .leaderMode({ sticky: true, escape: ["caps_lock", "return_or_enter"] })
         .notification()
         .manipulators({
-            h: toUrl(
-                "raycast://extensions/raycast/window-management/left-half",
-                { background: true },
-            ),
-            j: toUrl(
-                "raycast://extensions/raycast/window-management/bottom-half",
-                { background: true },
-            ),
-            k: toUrl(
-                "raycast://extensions/raycast/window-management/top-half",
-                { background: true },
-            ),
-            l: toUrl(
-                "raycast://extensions/raycast/window-management/right-half",
-                { background: true },
-            ),
+            h: toUrl("raycast://extensions/raycast/window-management/left-half", { background: true }),
+            j: toUrl("raycast://extensions/raycast/window-management/bottom-half", { background: true }),
+            k: toUrl("raycast://extensions/raycast/window-management/top-half", { background: true }),
+            l: toUrl("raycast://extensions/raycast/window-management/right-half", { background: true }),
 
-            r: toUrl(
-                "raycast://extensions/raycast/window-management/reasonable-size",
-                { background: true },
-            ),
-            a: toUrl(
-                "raycast://extensions/raycast/window-management/almost-maximize",
-                { background: true },
-            ),
-            m: toUrl(
-                "raycast://extensions/raycast/window-management/maximize",
-                { background: true },
-            ),
-            f: toUrl(
-                "raycast://extensions/raycast/window-management/toggle-fullscreen",
-                { background: true },
-            ),
+            r: toUrl("raycast://extensions/raycast/window-management/reasonable-size", { background: true }),
+            a: toUrl("raycast://extensions/raycast/window-management/almost-maximize", { background: true }),
+            m: toUrl("raycast://extensions/raycast/window-management/maximize", { background: true }),
+            f: toUrl("raycast://extensions/raycast/window-management/toggle-fullscreen", { background: true }),
 
-            c: toUrl("raycast://extensions/raycast/window-management/center", {
-                background: true,
-            }),
+            c: toUrl("raycast://extensions/raycast/window-management/center", { background: true }),
 
-            n: toUrl(
-                "raycast://extensions/raycast/window-management/next-display",
-                { background: true },
-            ),
-            p: toUrl(
-                "raycast://extensions/raycast/window-management/previous-display",
-                { background: true },
-            ),
+            n: toUrl("raycast://extensions/raycast/window-management/next-display", { background: true }),
+            p: toUrl("raycast://extensions/raycast/window-management/previous-display", { background: true }),
         }),
 
     hyperLayer("a", "Use AI")
