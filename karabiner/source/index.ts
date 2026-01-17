@@ -116,6 +116,8 @@ writeToProfile("Default", [
                 k: toKey("up_arrow"),
                 j: toKey("down_arrow"),
 
+                i: toKey("down_arrow", "<⌃"), // Switch application windows
+
                 // a: toKey("f14", "<⌘"), // RayCast ChatAI
                 // q: toKey("f14", "<⌘⌥⌃"), // RayCast Quick Chat
 
@@ -187,6 +189,7 @@ writeToProfile("Default", [
             a: toKey("f14", "<⌘⌥⌃"), // Last used AI chat
 
             s: toKey("f14", "<⌘"), // Searching AI
+            d: toKey("f14", "<⌘⇧"), // Searching AI Thinking
 
             w: toKey("f14", "<⌥"), // Writing AI
 
