@@ -5,12 +5,17 @@ import {
     ifVar,
     map,
     rule,
+    to$,
     toApp,
     toKey,
     toSetVar,
     withModifier,
     writeToProfile,
 } from "karabiner.ts";
+
+const toUrl = (url: string, options?: { background?: boolean }) => {
+    return to$(`open ${options?.background ? "-g" : ""} "${url}"`);
+};
 
 writeToProfile("Default", [
     rule("Work PC config")
@@ -168,18 +173,52 @@ writeToProfile("Default", [
         .leaderMode({ sticky: true, escape: ["caps_lock", "return_or_enter"] })
         .notification()
         .manipulators({
-            h: toKey("f13"), // left half
-            m: toKey("f13", "<⌥⇧"), // almost maximize
-            a: toKey("f13", "<⌥⌃"), // almost maximize
-            c: toKey("f13", "<⌘⌃"), // center
-            n: toKey("f13", "<⌃⇧"), // next display
-            p: toKey("f13", "<⌘"), // previous display
-            r: toKey("f13", "<⌘⇧"), // reasonable size
-            l: toKey("f13", "<⌥"), // right half
-            f: toKey("f13", "<⌘⌥"), // almost maximize
-            j: toKey("f13", "<⇧"), // bottom half
-            k: toKey("f13", "<⌃"), // top half
-            // m: toKey("f13", "<⌘⌥⌃⇧"), // almost maximize
+            h: toUrl(
+                "raycast://extensions/raycast/window-management/left-half",
+                { background: true },
+            ),
+            j: toUrl(
+                "raycast://extensions/raycast/window-management/bottom-half",
+                { background: true },
+            ),
+            k: toUrl(
+                "raycast://extensions/raycast/window-management/top-half",
+                { background: true },
+            ),
+            l: toUrl(
+                "raycast://extensions/raycast/window-management/right-half",
+                { background: true },
+            ),
+
+            r: toUrl(
+                "raycast://extensions/raycast/window-management/reasonable-size",
+                { background: true },
+            ),
+            a: toUrl(
+                "raycast://extensions/raycast/window-management/almost-maximize",
+                { background: true },
+            ),
+            m: toUrl(
+                "raycast://extensions/raycast/window-management/maximize",
+                { background: true },
+            ),
+            f: toUrl(
+                "raycast://extensions/raycast/window-management/toggle-fullscreen",
+                { background: true },
+            ),
+
+            c: toUrl("raycast://extensions/raycast/window-management/center", {
+                background: true,
+            }),
+
+            n: toUrl(
+                "raycast://extensions/raycast/window-management/next-display",
+                { background: true },
+            ),
+            p: toUrl(
+                "raycast://extensions/raycast/window-management/previous-display",
+                { background: true },
+            ),
         }),
 
     hyperLayer("a", "Use AI")
