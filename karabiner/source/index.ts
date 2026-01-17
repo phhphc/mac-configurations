@@ -185,6 +185,8 @@ writeToProfile("Default", [
         .leaderMode({ escape: ["caps_lock", "return_or_enter"] })
         .notification()
         .manipulators({
+            t: to$(`open -g "raycast://ai-commands/translate-selected-text?arguments=Vietnamese"`),
+
             a: toKey("f14", "<⌘⌥⌃"), // Last used AI chat
 
             s: toKey("f14", "<⌘"), // Searching AI

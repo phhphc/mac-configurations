@@ -1931,6 +1931,47 @@
               {
                 "type": "basic",
                 "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g \"raycast://ai-commands/translate-selected-text?arguments=Vietnamese\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Use AI",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Use AI",
+                      "text": ""
+                    }
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "Use AI",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
                   "key_code": "a",
                   "modifiers": {
                     "mandatory": [
