@@ -1561,6 +1561,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/left-half\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1584,6 +1602,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/bottom-half\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1607,6 +1643,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/top-half\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1630,6 +1684,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/right-half\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1653,6 +1725,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/reasonable-size\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1676,6 +1766,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/almost-maximize\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1699,6 +1807,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/maximize\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1722,6 +1848,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/toggle-fullscreen\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1745,6 +1889,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/center\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1768,6 +1930,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/next-display\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [
@@ -1791,6 +1971,24 @@
                 "to": [
                   {
                     "shell_command": "open -g \"raycast://extensions/raycast/window-management/previous-display\""
+                  },
+                  {
+                    "set_variable": {
+                      "name": "Manage Window",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "__layer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "set_notification_message": {
+                      "id": "layer-Manage Window",
+                      "text": ""
+                    }
                   }
                 ],
                 "conditions": [

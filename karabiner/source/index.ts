@@ -162,7 +162,7 @@ writeToProfile("Default", [
         }),
 
     hyperLayer("w", "Manage Window")
-        .leaderMode({ sticky: true, escape: ["caps_lock", "return_or_enter"] })
+        .leaderMode({ sticky: false, escape: ["caps_lock", "return_or_enter"] })
         .notification()
         .manipulators({
             h: to$(`open -g "raycast://extensions/raycast/window-management/left-half"`),
